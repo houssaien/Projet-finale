@@ -8,7 +8,8 @@ class App extends Component {
      <div>
         
         <div class="wrapper">
-            <div class="cssload-loader"></div>
+            <div class="cssload-loader">
+            </div>
         </div>
     
         {/* ***** Top Search Area Start ***** */}
