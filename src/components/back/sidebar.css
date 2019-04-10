@@ -1,0 +1,119 @@
+
+  html,
+  body {
+    margin: 0;
+  }
+  
+  #App {
+    font-family: sans-serif;
+  
+    /* Give app full page to work with */
+    height: 100vh;
+  }
+  
+  #page-wrap {
+    text-align: center;
+  
+    /* Prevent sidebar from showing a scrollbar on page */
+    overflow: auto;
+  }
+  .sidebar-logo{
+    width: 49% !important;
+    height: 52px !important;
+    margin-top: -77px !important;
+    margin-bottom: 47px !important;
+  }
+  
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+  
+    /* Our sidebar item styling */
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #d1d1d1;
+    transition: color 0.2s;
+    height: 46px;
+    width: 100%;
+    padding-top: 9px;
+    text-align: justify !important;
+    
+  }
+  
+  /* Change color on hover */
+  .bm-item:hover {
+    color: white;
+    background-color: #3c3f49;
+    margin:-6px 0 0 0;
+  }
+  
+  /* The rest copied directly from react-burger-menu docs */
+  
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 15px;
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    position: fixed;
+    background: #373a47;
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background: #373a47;
+    padding: 5.5em 1.5em 0;
+    font-size: 1.15em;
+   
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+   
+    fill: #373a47;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    /* padding-top: 70px; */
+    color: #b8b7ad;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+.navbar-admin{
+    color: rgb(158, 156, 156) !important;
+
+}  
+.navbar-admin-left{
+    margin-left: 296% !important;
+    color: #373a47 !important;
+}
+.notif{
+    font-size: 34px !important;
+    color: #373a47 !important;
+    margin-right: 303px !important;
+}
+.icon-sidebar{
+  padding-right: 5% !important;
+  font-size: 18px !important;
+}
