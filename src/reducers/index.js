@@ -1,4 +1,4 @@
-import {combineReducers} from  'redux'
-import reducerusers from './reducersUsers'
+import {combineReducers} from 'redux'
 
-export default combineReducers({reducerusers})
+
+export default combineReducers({})
