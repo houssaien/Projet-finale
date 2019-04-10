@@ -5,10 +5,11 @@
 }
 
 .navbar a {
-  float: left;
+  display: flex;
+  justify-content: flex-end;
   text-align: center;
-  padding: 12px;
-  color: black;
+  padding: 7px;
+  color: #303030;;
   text-decoration: none;
   font-size: 20px;
 }

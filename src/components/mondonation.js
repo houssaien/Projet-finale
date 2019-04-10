@@ -95,9 +95,8 @@ class Mondonation extends Component {
         
                
 
-
-              <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" width="200px" height="150px" /></NavbarBrand>
+              <Navbar color="white" light expand="md">
+          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" > 
@@ -161,17 +160,19 @@ class Mondonation extends Component {
               </NavItem>
               
         {/* Login / Register */}
-        <div className="login-register-btn mx-3">
+        
+        <NavItem>
           <a><Link to='/Identifier'>
           S'identifier
-            </Link> </a><span><a><Link to='/Registre'>
+            </Link> </a>
+            </NavItem>
+            <NavItem>
+            <span><a><Link to='/Registre'>
             / Registre
             </Link></a></span>
-        </div>
-        <NavItem>
-            <br/>
+            </NavItem>
         
-      </NavItem>
+       
             </Nav>
             
           </Collapse>

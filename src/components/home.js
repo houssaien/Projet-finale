@@ -70,7 +70,7 @@ class home extends Component {
 
 
               <Navbar color="white" light expand="md">
-          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" width="200px" height="150px" /></NavbarBrand>
+          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" > 
@@ -146,10 +146,7 @@ class home extends Component {
             </Link></a></span>
             </NavItem>
         
-        <NavItem>
-            <br/>
-        
-      </NavItem>
+       
             </Nav>
             
           </Collapse>
@@ -245,7 +242,7 @@ class home extends Component {
               {/* About Thumbnail */}
               <div className="col-12 col-md-6">
                 <div className="about-us-thumbnail mb-80">
-                <img  src={logo2} className="puce-page" alt="Logo" />
+                <img  src={logo2} alt="Logo" />
                   {/* Video Area */}
                   
                 </div>
