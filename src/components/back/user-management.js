@@ -12,7 +12,9 @@ class UserManagement extends Component {
     render() { 
         return (<div> 
             <SideBar/>
-            <MDBBtnGroup>
+            <h1 className='titleusers'>List of Users
+            </h1>
+            {/* <MDBBtnGroup>
            <Link to='./add-user'> <MDBBtn color="light" size="lg" className="management-user">
             <i className="fas fa-user-check  user-admin"></i>
             <br/>
@@ -27,7 +29,7 @@ class UserManagement extends Component {
             </Link>
             
             
-          </MDBBtnGroup> 
+          </MDBBtnGroup>  */}
           <ListeUser/>
           </div>);
     }

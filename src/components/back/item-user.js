@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBTable, MDBTableBody} from 'mdbreact';
 
 
 
@@ -16,18 +16,8 @@ class ItemUser extends Component {
   return (
 <div>
 
-    <MDBTable striped className="Table-user" >
-      <MDBTableHead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Location</th>
-          <th>Delete</th>
-
-        </tr>
-      </MDBTableHead>
+    <MDBTable className="Table-user" >
+     
       <MDBTableBody>
         <tr>
           <td>1</td>

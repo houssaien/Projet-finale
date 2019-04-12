@@ -70,13 +70,13 @@ class home extends Component {
 
 
               <Navbar color="white" light expand="md">
-          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
+          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="50px" /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" > 
               <NavItem>
                 <NavLink class="classynav nav caret">
-                <Link to='/'>
+                <Link className="active" to='/'>
                 Acceuil
             </Link>
             </NavLink>
