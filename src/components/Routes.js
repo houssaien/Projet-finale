@@ -42,11 +42,11 @@ class Routes extends Component {
              <Route exact path='/Monprofil' component={Monprofil}/>
             
        
-             <Route exact path="/backend" component={SideBar} />
-             <Route exact path="/back" component={Dashboard} />
-              <Route  path="/user-management" component={UserManagement} />
-              <Route exact path="/add-user" component={AddUser} />
-                <Route exact path="/edit-user" component={EditUser} />
+            <Route exact path="/backend" component={SideBar} />
+            <Route exact path="/back" component={Dashboard} />
+            <Route  path="/user-management" component={UserManagement} />
+            <Route exact path="/add-user" component={AddUser} />
+            <Route exact path="/edit-user" component={EditUser} />
                
             </div>
          );

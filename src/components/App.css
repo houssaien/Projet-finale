@@ -3,17 +3,23 @@
   justify-content: space-around;
 
 }
-
+.navbar{
+  height: 61px;
+}
 .navbar a {
   display: flex;
   justify-content: flex-end;
   text-align: center;
   padding: 7px;
-  color: #303030;;
-  text-decoration: none;
-  font-size: 20px;
+  padding-top: 10px;
+  color: #4e4c4c;
+  text-decoration: none !important;
+  font-size: 16px;
+  
 }
-
+.active{
+  color: #1583e9 !important;
+}
 .navbar a:hover {
  color: #1583e9;
 }
@@ -28,5 +34,8 @@
   width: 900px !important;
 }
 
-
+.logo-navbar{
+  width: 100% !important;
+  height: 50px !important;
+}
 
