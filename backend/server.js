@@ -203,7 +203,7 @@ app.post('/add-bien',(req,res)=>{
     })
 })
  // get biens
- app.get('/get-bien',(req,res)=>{
+ app.get('/get-biens',(req,res)=>{
 
     db.collection('biens').find().toArray((err,data)=>{
          if(err) res.send('can not get biens')

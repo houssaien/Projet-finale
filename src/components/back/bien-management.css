@@ -1,0 +1,26 @@
+.user-admin{
+    color: rgb(4, 102, 194);
+    font-size: 34px !important;
+    padding-bottom: 23px;
+   }
+   .management-user{
+       font-family: sans-serif;
+       font-size: 34px;
+       color: rgb(36, 35, 35);
+       margin-left: 21% !important;
+       width: 93% !important;
+       margin-top: 100px !important;
+   
+   
+   }
+   .ListeUsers{
+       width: 89%;
+       margin-left: 14% !important;
+       margin-top:120px !important;
+   }
+   .titleusers{
+       margin-left: 30% !important;
+       font-style: italic;
+       color: rgb(144, 132, 194);
+       margin-top: 12px !important;
+   }

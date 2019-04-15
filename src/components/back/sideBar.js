@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
  import './sidebar.css' 
 import Logo from  "./images/logof.png"
 
+
 export default props => {
   
   return ( <div>
@@ -26,9 +27,7 @@ export default props => {
           <MDBNavbarNav right>
             <MDBNavItem>
               <MDBFormInline waves>
-                <div className="md-form my-0">
-                  <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-                </div>
+               
               </MDBFormInline>
             </MDBNavItem>
           </MDBNavbarNav>
@@ -38,7 +37,9 @@ export default props => {
     <Menu {...props} >
         <img className='sidebar-logo' src={Logo} alt="/" />
 
-    
+        <div className="md-form my-0 search">
+                  <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                </div>
         <a className="menu-item" href="/Dashbord">
       <i class="fas fa-home icon-sidebar"></i>
         Dashbord
@@ -54,9 +55,9 @@ export default props => {
       Services Management
       </a>
 
-      <a className="menu-item" href="/ProductManagement">
+      <a className="menu-item" href="/Bien-Management">
       <i class="fab fa-product-hunt icon-sidebar"></i>
-      Products Management
+      Gestion Biens
       </a>
       <a className="menu-item" href="/Events">
       <i class="fas fa-calendar-alt icon-sidebar"></i>

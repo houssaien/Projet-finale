@@ -23,6 +23,11 @@
     margin-top: -77px !important;
     margin-bottom: 47px !important;
   }
+
+
+  .search{
+    color: white !important;
+  }
   
   /* Individual item */
   .bm-item {

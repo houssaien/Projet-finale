@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBTable, MDBTableBody} from 'mdbreact';
+import { Table } from 'reactstrap';
 
 
 
@@ -16,9 +16,9 @@ class ItemUser extends Component {
   return (
 <div>
 
-    <MDBTable className="Table-user" >
+     <Table striped>
      
-      <MDBTableBody>
+     <tbody>
         <tr>
           <td>1</td>
           <td>{item.name}</td>
@@ -27,9 +27,9 @@ class ItemUser extends Component {
           <td>{item.location}</td>
           <td><i class="fas fa-times-circle delete"></i></td>
         </tr>
-       </MDBTableBody>
-      
-    </MDBTable>
+       
+      </tbody>
+   </Table>
     </div>
   );
 }

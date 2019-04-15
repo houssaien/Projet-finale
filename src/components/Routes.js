@@ -17,6 +17,7 @@ import Monprofil from './monprofil'
 
 
 import UserManagement from './back/user-management';
+import BienManagement from './back/bien-management';
 import AddUser   from './back/add-user'
 import Dashboard from './back/dashboard'
 import EditUser from './back/edituser'
@@ -45,6 +46,7 @@ class Routes extends Component {
             <Route exact path="/backend" component={SideBar} />
             <Route exact path="/back" component={Dashboard} />
             <Route  path="/user-management" component={UserManagement} />
+            <Route  path="/Bien-Management" component={BienManagement} />
             <Route exact path="/add-user" component={AddUser} />
             <Route exact path="/edit-user" component={EditUser} />
             <Route exact path="/Liste-services" component={EnhancedTable}/>
