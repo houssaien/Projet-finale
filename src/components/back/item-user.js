@@ -27,9 +27,15 @@ class ItemUser extends Component {
           <td>{item.location}</td>
           <td><i class="fas fa-times-circle delete"></i></td>
         </tr>
+<<<<<<< HEAD
        
       </tbody>
    </Table>
+=======
+       </MDBTableBody>
+      
+    </MDBTable>
+>>>>>>> origin/insaf
     </div>
   );
 }

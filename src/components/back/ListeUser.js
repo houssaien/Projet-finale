@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { MDBTable,  MDBTableHead } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 import ItemUser from './item-user'
 import './user-management.css'
@@ -12,6 +13,9 @@ class ListUser extends Component {
     render() { 
         const {users}=this.props
         return ( 
+            <MDBContainer>
+      <MDBRow>
+      <MDBCol size="12"  sm="6" lg="8" >
             <div className="ListeUsers">
                 <MDBTable  className="Table-user" >
       <MDBTableHead>
@@ -26,12 +30,18 @@ class ListUser extends Component {
         </tr>
       </MDBTableHead>
       </MDBTable>
+
         <div className='liste-user'>
+        <tr><td>
         {
             users.map((el,index)=><ItemUser item={el} key={index} id={index}/>)
         }
+        </td></tr>
          </div>         
          </div> 
+         </MDBCol>
+         </MDBRow>
+         </MDBContainer>
         );
     }
 } 
