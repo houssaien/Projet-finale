@@ -14,9 +14,9 @@ export default props => {
   return ( <div>
     <MDBNavbar  light expand="md"  className='navbar-admin' >
     <MDBNavbarNav left>
-
+    
             <MDBNavItem active className='navbar-admin-left'>
-              <Link to="/notifications"><i class="fas fa-bell notif"></i></Link>
+              
             </MDBNavItem>
             {/* <MDBNavItem>
               <Link to="/compte-our-admin"className='admin-name' >Admin-Compte</Link>
@@ -25,9 +25,10 @@ export default props => {
            
           </MDBNavbarNav>
           <MDBNavbarNav right>
+         
             <MDBNavItem>
               <MDBFormInline waves>
-               
+              <Link to="/notifications"><i class="fas fa-bell notif"></i></Link>
               </MDBFormInline>
             </MDBNavItem>
           </MDBNavbarNav>
@@ -37,9 +38,11 @@ export default props => {
     <Menu {...props} >
         <img className='sidebar-logo' src={Logo} alt="/" />
 
-        <div className="md-form my-0 search">
+        <div >
                   <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                  
                 </div>
+                <br/><br/>
         <a className="menu-item" href="/Dashbord">
       <i class="fas fa-home icon-sidebar"></i>
         Dashbord

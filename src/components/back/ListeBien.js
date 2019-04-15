@@ -27,8 +27,12 @@ class ListBien extends Component {
           <Col  sm={{ size: 'auto', offset: 1 }} >
           <br/>   <br/>   <br/>
           <h1>Gestion des Bien</h1>
-                 <Button color="success">Ajouter Bien</Button>{' '}
-               <Table responsive>
+          <Container>
+        <Row>
+        <Col xs="12" sm="10"> </Col>
+        <Col xs="12" sm="2">  <Button color="success">Ajouter Bien</Button>{' '}</Col>
+                 </Row></Container>
+               <Table responsive>         
       <thead>
           <tr>
           <th>N°</th>

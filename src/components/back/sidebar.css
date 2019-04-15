@@ -18,8 +18,8 @@
     overflow: auto;
   }
   .sidebar-logo{
-    width: 49% !important;
-    height: 52px !important;
+    width: 200px !important;
+    height: 100px !important;
     margin-top: -77px !important;
     margin-bottom: 47px !important;
   }
@@ -27,6 +27,7 @@
 
   .search{
     color: white !important;
+  
   }
   
   /* Individual item */
@@ -116,7 +117,7 @@
 .notif{
     font-size: 34px !important;
     color: #373a47 !important;
-    margin-right: 303px !important;
+   
 }
 .icon-sidebar{
   padding-right: 5% !important;
