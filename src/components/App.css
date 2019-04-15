@@ -38,4 +38,15 @@
   width: 100% !important;
   height: 50px !important;
 }
-
+.title-service{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular';
+  font-size: 34px;
+  color: #1583e9;
+  margin-bottom: 42px !important;
+}
+/* .dropdown-link{
+  font-family: 'Lucida Sans';
+  color: #686666 !important;
+  text-align: center !important;
+  padding-left: 3% !important;
+} */

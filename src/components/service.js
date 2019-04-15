@@ -15,6 +15,10 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+
+
+import ListServices from './listeservices';
+
 class Don extends Component {
     constructor(props) {
         super(props);
@@ -78,7 +82,10 @@ class Don extends Component {
       <ListGroupItem disabled tag="a"action>Vestibulum at eros</ListGroupItem>
     </ListGroup>
                   </Col>
-      <Col sm="8">  Nos Services</Col>
+      <Col sm="8" >
+          <div className="title-service"> Nos Services</div>
+          <ListServices/>
+      </Col>
     </Row>
           </Container>
     </div>

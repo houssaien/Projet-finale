@@ -46,17 +46,17 @@ export default props => {
 
       <a className="menu-item" href="/User-Management">
       <i class="fas fa-chalkboard-teacher icon-sidebar"></i>
-      User Management
+      Users Management
       </a>
 
-      <a className="menu-item" href="/BienManagements">
+      <a className="menu-item" href="/Liste-services">
       <i class="fas fa-archive icon-sidebar"></i>
-      Bien Management
+      Services Management
       </a>
 
       <a className="menu-item" href="/ProductManagement">
       <i class="fab fa-product-hunt icon-sidebar"></i>
-      Product Management
+      Products Management
       </a>
       <a className="menu-item" href="/Events">
       <i class="fas fa-calendar-alt icon-sidebar"></i>

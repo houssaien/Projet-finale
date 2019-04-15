@@ -22,7 +22,6 @@ import Dashboard from './back/dashboard'
 import EditUser from './back/edituser'
 import SideBar from './back/sideBar'
 
-
 class Routes extends Component {
     render() { 
         return ( 
@@ -47,6 +46,7 @@ class Routes extends Component {
             <Route  path="/user-management" component={UserManagement} />
             <Route exact path="/add-user" component={AddUser} />
             <Route exact path="/edit-user" component={EditUser} />
+            {/* <Route exact path="/Liste-services" component={}/> */}
                
             </div>
          );

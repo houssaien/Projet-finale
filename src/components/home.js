@@ -90,13 +90,13 @@ class home extends Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                  <Link to='/Bien'>
+                  <Link to='/Bien' className="dropdown-link">
                   Echange de bien
             </Link>
                  
                   </DropdownItem>
                   <DropdownItem>
-                  <Link to='/Service'>
+                  <Link to='/Service' className="dropdown-link">
                     Echange de service
                     </Link>
                   </DropdownItem>

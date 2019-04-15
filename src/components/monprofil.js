@@ -148,7 +148,7 @@ class Monprofil extends Component {
             <Nav className="ml-auto" > 
               <NavItem>
                 <NavLink class="classynav nav caret">
-                <Link to='/'>
+                <Link to='/'className="active">
                 Acceuil
             </Link>
             </NavLink>
