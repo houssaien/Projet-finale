@@ -1,5 +1,4 @@
-
-let services=[ 
+let events=[ 
     {
     title: 'Babisitting',
     description:' baby citting',
@@ -15,18 +14,18 @@ let services=[
     imageUrl: "images/uploads/1555072448028-dcn4e38-44bbf8a1-1592-4014-b4de-c04f663c1c74.png"}
 ]
 
-const reducerservices=(state=services,action)=>{
+const reducerevents=(state=events,action)=>{
     switch(action.type)
 {
-case 'ADD_SERVICE' :
+case 'ADD_EVENT' :
 return (
-    state.concat(action.newservice)
+    state.concat(action.newevent)
 )
-case 'UPDATE_SERVICE':
+case 'UPDATE_EVENT':
       return(
-          state=action.services
+          state=action.events
       )
- case 'REMOVE_SERVICE':
+ case 'REMOVE_EVENT':
     return (
           state.filter(el=>el._id!==action._id)
  )     
@@ -35,4 +34,4 @@ default :
 return state
 }
 }
-export default reducerservices;
+export default reducerevents;

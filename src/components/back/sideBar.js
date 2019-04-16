@@ -62,7 +62,7 @@ export default props => {
       <i class="fab fa-product-hunt icon-sidebar"></i>
       Gestion Biens
       </a>
-      <a className="menu-item" href="/Events">
+      <a className="menu-item" href="/Liste-events">
       <i class="fas fa-calendar-alt icon-sidebar"></i>
        Events
       </a>

@@ -22,7 +22,10 @@ import AddUser   from './back/add-user'
 import Dashboard from './back/dashboard'
 import EditUser from './back/edituser'
 import SideBar from './back/sideBar'
-import EnhancedTable from './back/liste-service'
+import ServiceManagement from './back/service-management'
+import AddService from './back/add-service'
+import ModalRemove from './back/removeservice'
+import  EventManagement from './back/events-management'
 
 class Routes extends Component {
     render() { 
@@ -49,8 +52,13 @@ class Routes extends Component {
             <Route  path="/Bien-Management" component={BienManagement} />
             <Route exact path="/add-user" component={AddUser} />
             <Route exact path="/edit-user" component={EditUser} />
-            <Route exact path="/Liste-services" component={EnhancedTable}/>
-               
+            <Route exact path="/Liste-services" component={ServiceManagement}/>
+            <Route exact path="/add-service" component={AddService}/>
+            <Route exact path="/remove-service" component={ModalRemove}/>
+            <Route exact path="/Liste-events" component={EventManagement}/>
+
+
+
             </div>
          );
     }

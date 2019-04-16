@@ -101,7 +101,7 @@ app.get('/get-service',(req,res)=>{
     })   
     })
 //remove service
-app.delete('/delete-sevice/:id',(req,res)=>{
+app.delete('/delete-service/:id',(req,res)=>{
     let id=ObjectID(req.params.id)
     db.collection('services').findOneAndDelete({_id:id},(err,data)=>{
         if (err) res.send('can not delete service')
@@ -136,10 +136,10 @@ app.post('/add-event',(req,res)=>{
     })   
     })
 
- //remove service
-app.delete('/delete-sevice/:id',(req,res)=>{
+ //remove event
+app.delete('/delete-event/:id',(req,res)=>{
     let id=ObjectID(req.params.id)
-    db.collection('servicess').findOneAndDelete({_id:id},(err,data)=>{
+    db.collection('event').findOneAndDelete({_id:id},(err,data)=>{
         if (err) res.send('can not delete service')
         else res.send(data)
     })

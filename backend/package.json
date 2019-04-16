@@ -20,8 +20,8 @@
     "mongoose": "^5.4.19",
     "multer": "^1.4.1",
     "nodemon": "^1.18.10",
-    "react-mailto": "^0.4.0",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-mailto": "^0.4.0"
   }
 }

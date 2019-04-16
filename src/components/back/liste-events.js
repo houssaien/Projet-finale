@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Table,Button } from 'reactstrap';
@@ -8,7 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
-class ListService extends Component {
+class ListEvents extends Component {
     constructor(props) {
         super(props);
         
@@ -16,13 +14,13 @@ class ListService extends Component {
     }
      
         componentDidMount=()=>{
-          axios.get('/get-service').then((res)=>this.props.updateServiceReducer(res.data))
+          axios.get('/get-event').then((res)=>this.props.updateEventsReducer(res.data))
       }
 
       
     
     render() { 
-        const {service}=this.props
+        const {events}=this.props
         return ( 
             <div >
            
@@ -30,14 +28,14 @@ class ListService extends Component {
                  <Row>
           <Col  sm={{ size: 'auto', offset: 1 }} >
           <br/>   <br/>   <br/>
-          <h1>Gestion des Services</h1>
+          <h1>Gestion des Evenements</h1>
           <Container>
         <Row>
         <Col xs="12" sm="10"> </Col>
 
         <Col xs="12" sm="2">  
-        <Link to='/add-service'>
-        <Button color="success">Ajouter Service</Button>{' '}
+        <Link to='/add-event'>
+        <Button color="success">Ajouter Event</Button>{' '}
         </Link>
         </Col>
         
@@ -58,19 +56,19 @@ class ListService extends Component {
      
      
         <tbody>
-      {service.map((ItemService, i) => {
+      {events.map((ItemEvent, i) => {
         return (
           <Fragment>
             <tr key={i}  >
               
               <td>{i}</td>
-              <td>{ItemService.title}</td>
-              <td>{ItemService.location}</td>
-              <td>{ItemService.imageUrl}</td>
-                <td>{ItemService.date}</td>
+              <td>{ItemEvent.title}</td>
+              <td>{ItemEvent.location}</td>
+              <td>{ItemEvent.imageUrl}</td>
+                <td>{ItemEvent.date}</td>
                 <td>
                 <Button color="warning">Détails</Button>{' '}
-                <Link to='/remove-service'> 
+                <Link to='/remove-event'> 
                    <Button color="danger">Supprimer</Button>{' '}
                 </Link>
                 </td>
@@ -92,22 +90,22 @@ class ListService extends Component {
 
 const mapStateToProps=(state)=>
 {  return {
-    service:state.reducerservices
+    event:state.reducerevents
 }
 }
 
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-      updateServiceReducer:services=>
+      updateEventReducer:events=>
         {
             dispatch({
-                type:'UPDATE_SERVICE',
-                services
+                type:'UPDATE_EVENT',
+                events
             })
         }
     }
 }
 
  
-export default connect(mapStateToProps,mapDispatchToProps)(ListService);
+export default connect(mapStateToProps,mapDispatchToProps)(ListEvents);

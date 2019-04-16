@@ -1,6 +1,7 @@
 {
   "name": "badeli",
   "version": "0.1.0",
+  "proxy": "http://localhost:3055",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
