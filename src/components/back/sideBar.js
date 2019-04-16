@@ -28,7 +28,8 @@ export default props => {
          
             <MDBNavItem>
               <MDBFormInline waves>
-              <Link to="/notifications"><i class="fas fa-bell notif"></i></Link>
+              <img src={Logo} alt="/" width="100px" height="100px" />
+              <Link to="/notifications"><i class="fas fa-bell notif" width="10px" height="10px"></i></Link>
               </MDBFormInline>
             </MDBNavItem>
           </MDBNavbarNav>
@@ -68,7 +69,7 @@ export default props => {
       </a>
       <a className="menu-item" href="/Don">
       <i class="fas fa-hands-helping icon-sidebar"></i>   
-          Don
+         Gestion Dons
       </a>
     </Menu>
     </div>

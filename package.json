@@ -2,6 +2,7 @@
   "name": "badeli",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3055",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
@@ -14,6 +15,7 @@
     "react": "^16.8.6",
     "react-burger-menu": "^2.6.8",
     "react-dom": "^16.8.6",
+    "react-js-pagination": "^3.0.2",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",

@@ -211,6 +211,22 @@ app.post('/add-bien',(req,res)=>{
     })   
     })
 
+
+//get biens by id
+app.get("/getbien/:id", (req, res) => {
+    let id = ObjectID(req.params.id)
+    db.collection("biens")
+      .find({ _id: id })
+      .toArray((err, data) => {
+        if (err) res.send("can not get item")
+        else res.send(data)
+        console.log(data)
+      })
+})
+
+
+
+
  //remove biens
 app.delete('/delete-bien/:id',(req,res)=>{
     let id=ObjectID(req.params.id)

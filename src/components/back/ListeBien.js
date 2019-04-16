@@ -1,78 +1,84 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Table,Button } from 'reactstrap';
-import  { Fragment } from "react";
+import {Link} from 'react-router-dom'
+import './liste-bien.css'
+import axios from 'axios'
+
 import { Container, Row, Col } from 'reactstrap';
-import ItemBien from './item-bien'
+import Pagination from "react-js-pagination";
+import BienItem from './item-bien'
 
 class ListBien extends Component {
-    constructor(props) {
-        super(props);
-        this.toggle = this.toggle.bind(this);
-        this.state = {  isOpen: false}
-    }
-        toggle(){
-            this.setState({
-              isOpen: !this.state.isOpen
-            });
+
+    constructor(props)
+    {
+      
+        super(props)
+        this.state={
+          activePage: 1
         }
+    }
+    componentDidMount=()=>{
+        axios.get('/get-biens').then((res)=>this.props.updateBienReducer(res.data))
+    }
     
+    
+
+    
+
     render() { 
+      
         const {biens}=this.props
         return ( 
-            <div >
-           
+         <div>
+            <div className="bord">
+          
                  <Container>
-                 <Row>
-          <Col  sm={{ size: 'auto', offset: 1 }} >
+                
           <br/>   <br/>   <br/>
           <h1>Gestion des Bien</h1>
           <Container>
         <Row>
-        <Col xs="12" sm="10"> </Col>
-        <Col xs="12" sm="2">  <Button color="success">Ajouter Bien</Button>{' '}</Col>
+        <Col xs="12" sm="9"> </Col>
+        <Col xs="12" sm="3">  
+        <Link to='/add-bien'>
+            
+             
+        <Button color="success">Ajouter Bien</Button></Link></Col>
                  </Row></Container>
-               <Table responsive>         
-      <thead>
+           
+               <Table responsive>       
+      <thead >
+      
           <tr>
-          <th>N°</th>
-          <th>Titre</th>
+          <th className='col-lg-2'>N°</th>
+          <th className='col-lg-2'>Titre</th>
         
           
-          <th>Location</th>
-          <th>Image</th>
-          <th>Date</th>
-          <th>Action</th>
+          <th className='col-lg-2'>Location</th>
+          
+         
+          <th className='col-lg-6'>Action</th>
           </tr>
+         
         </thead>
+       
      
-     
-        <tbody>
-      {biens.map((ItemBien, i) => {
-        return (
-          <Fragment>
-            <tr key={i} >
-              
-              <td>{i}</td>
-              <td>{ItemBien.title}</td>
-              <td>{ItemBien.location}</td>
-              <td>{ItemBien.imageUrl}</td>
-                <td>{ItemBien.date}</td>
-                <td>
-                <Button color="warning">Détails</Button>{' '}
-        <Button color="danger">Supprimer</Button>{' '}
-                </td>
-            </tr>
-            
-          </Fragment>
-        );
-      })}
-    </tbody>
+        </Table>
+    
+            {
+               biens.map((el,index)=>
+            <BienItem key={index} item={el}/>
+        )}  
+   
 
 
-         </Table>
-         </Col></Row>
+         
+      
          </Container>
+         </div>
+        
          </div> 
         );
     }
@@ -83,5 +89,20 @@ const mapStateToProps=(state)=>
     biens:state.reducersbiens
 }
 }
+
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        updateBienReducer:biens=>
+        {
+            dispatch({
+                type:'UPDATE_BIEN',
+                biens
+            })
+        }
+        
+    }
+}
+
  
-export default connect(mapStateToProps)(ListBien);
+export default connect(mapStateToProps,mapDispatchToProps)(ListBien);

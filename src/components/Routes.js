@@ -15,7 +15,8 @@ import Mondonation from './mondonation'
 import Monprofil from './monprofil'
 
 
-
+import DetailBien from './back/detail-bien';
+import AddBien from './back/add-bien';
 import UserManagement from './back/user-management';
 import BienManagement from './back/bien-management';
 import AddUser   from './back/add-user'
@@ -23,6 +24,7 @@ import Dashboard from './back/dashboard'
 import EditUser from './back/edituser'
 import SideBar from './back/sideBar'
 import EnhancedTable from './back/liste-service'
+import EditBien from './back/editBien'
 
 class Routes extends Component {
     render() { 
@@ -42,7 +44,13 @@ class Routes extends Component {
              <Route exact path='/Mondonation' component={Mondonation}/>
              <Route exact path='/Monprofil' component={Monprofil}/>
             
-       
+             
+
+             <Route exact path="/editbien/:_id" 
+             render={props=><EditBien _id={props.match.params._id}/>}/>
+
+             <Route exact path="/detail-bien/:_id" render={props=><DetailBien _id={props.match.params._id}/>}/>
+             <Route exact path="/add-bien" component={AddBien} />
             <Route exact path="/backend" component={SideBar} />
             <Route exact path="/back" component={Dashboard} />
             <Route  path="/user-management" component={UserManagement} />
