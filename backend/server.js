@@ -139,7 +139,7 @@ app.post('/add-event',(req,res)=>{
  //remove event
 app.delete('/delete-event/:id',(req,res)=>{
     let id=ObjectID(req.params.id)
-    db.collection('event').findOneAndDelete({_id:id},(err,data)=>{
+    db.collection('events').findOneAndDelete({_id:id},(err,data)=>{
         if (err) res.send('can not delete service')
         else res.send(data)
     })
@@ -210,6 +210,22 @@ app.post('/add-bien',(req,res)=>{
         else res.send(data)
     })   
     })
+
+
+//get biens by id
+app.get("/getbien/:id", (req, res) => {
+    let id = ObjectID(req.params.id)
+    db.collection("biens")
+      .find({ _id: id })
+      .toArray((err, data) => {
+        if (err) res.send("can not get item")
+        else res.send(data)
+        console.log(data)
+      })
+})
+
+
+
 
  //remove biens
 app.delete('/delete-bien/:id',(req,res)=>{

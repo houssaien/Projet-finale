@@ -28,7 +28,16 @@ case 'UPDATE_EVENT':
  case 'REMOVE_EVENT':
     return (
           state.filter(el=>el._id!==action._id)
- )     
+        
+ ) 
+ case 'EDIT_EVENT':
+ return (
+     state.map(el=>el._id===action.editevent._id? el=action.editevent:el)
+ )    
+ case 'DETAIL_EVENT':
+ return (
+     state.map(el=>el._id===action.editevent._id? el=action.editevent:el)  
+ )
 
 default :
 return state

@@ -1,5 +1,5 @@
 
-let biens=[ 
+let dons=[ 
     {
     title: 'vélo',
     description:'meilleur Vélo',
@@ -8,41 +8,41 @@ let biens=[
     imageUrl: ""
 },
 {
-    title: 'voiture',
-    description:"Peugeot 206",
+    title: 'table',
+    description:"table de cuisine",
     date: '23/12/2019',
     location: 'sousse',
     imageUrl: "images/uploads/1555072448028-dcn4e38-44bbf8a1-1592-4014-b4de-c04f663c1c74.png"
 }
 ]
 
-const reducersbiens=(state=biens,action)=>
+const reducersdons=(state=dons,action)=>
 {
   switch(action.type)
   {
-      case 'ADD_BIEN' :
+      case 'ADD_DON' :
       return (
-          state.concat(action.newbien)
+          state.concat(action.newdon)
       )
 
-      case 'EDIT_BIEN':
+      case 'EDIT_DON':
       return (
-          state.map(el=>el._id===action.editbien._id? el=action.editbien:el)
+          state.map(el=>el._id===action.editdon._id? el=action.editdon:el)
       )
-      case 'DETAIL_BIEN':
+      case 'DETAIL_DON':
       return (
-          state.map(el=>el._id===action.editbien._id? el=action.editbien:el)
+          state.map(el=>el._id===action.editdon._id? el=action.editdon:el)
       )
-      case 'REMOVE_BIEN':
+      case 'REMOVE_DON':
       return (
           state.filter(el=>el._id!==action._id)
       )
-      case 'UPDATE_BIEN':
+      case 'UPDATE_DON':
       return(
-          state=action.biens
+          state=action.dons
       )
       default :
       return state
   }
 }
-export default reducersbiens
+export default  reducersdons

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap';
-
-
-
+import {connect} from 'react-redux'
+import axios from 'axios'
+import { Button, Table } from 'reactstrap';
+import {Link} from 'react-router-dom'
 import './formuser.css'
 
 class ItemUser extends Component {
@@ -10,28 +10,48 @@ class ItemUser extends Component {
         super(props);
         this.state = {  }
     }
+
+    
     render() { 
     const {item}=this.props
 
   return (
 <div>
+      
+<Table responsive>       
+      <thead > 
+                <tr >
+               
+        <th className='col-lg-2'>{item._id}</th>
+        <th className='col-lg-2'>{item.name}</th>
+        <th className='col-lg-2'>{item.email}</th>
+                                      
+                 
+        <th className='col-lg-4'>
+                   
 
-     <Table striped>
-     
-     <tbody>
-        <tr>
-          <td>1</td>
-          <td>{item.name}</td>
-          <td>{item.email}</td>
-          <td>{item.password}</td>
-          <td>{item.location}</td>
-          <td><i class="fas fa-times-circle delete"></i></td>
-        </tr>
+                    <Link to={`/detail-user/${item._id}`}>
+            <Button color="warning">Détail</Button>
+            </Link>
+
+            
+
+            
+                  </th>
+
+                    
+                </tr>
+              
+                </thead>
        
-      </tbody>
-   </Table>
+     
+       </Table>
+         
+         
+ 
     </div>
   );
 }
 }
+
 export default ItemUser;

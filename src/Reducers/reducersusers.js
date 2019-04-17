@@ -21,6 +21,14 @@ case 'ADD_USER' :
 return (
     state.concat(action.newuser)
 )
+case 'DETAIL_USER':
+return (
+    state.map(el=>el._id===action.edituser._id? el=action.edituser:el)
+)
+case 'UPDATE_USER':
+      return(
+          state=action.users
+      )
 
 default :
 return state

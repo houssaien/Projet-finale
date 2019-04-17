@@ -7,9 +7,9 @@ import axios from 'axios'
 
 import { Container, Row, Col } from 'reactstrap';
 // import Pagination from "react-js-pagination";
-import BienItem from './item-bien'
+import ItemDon from './item-don'
 
-class ListBien extends Component {
+class ListDon extends Component {
 
     constructor(props)
     {
@@ -20,7 +20,7 @@ class ListBien extends Component {
         }
     }
     componentDidMount=()=>{
-        axios.get('/get-biens').then((res)=>this.props.updateBienReducer(res.data))
+        axios.get('/get-dons').then((res)=>this.props.updateDonReducer(res.data))
     }
     
     
@@ -29,7 +29,7 @@ class ListBien extends Component {
 
     render() { 
       
-        const {biens}=this.props
+        const {dons}=this.props
         return ( 
          <div>
             <div className="bord">
@@ -37,15 +37,15 @@ class ListBien extends Component {
                  <Container>
                 
           <br/>   <br/>   <br/>
-          <h1>Gestion des Bien</h1>
+          <h1>Gestion des Don</h1>
           <Container>
         <Row>
         <Col xs="12" sm="9"> </Col>
         <Col xs="12" sm="3">  
-        <Link to='/add-bien'>
+        <Link to='/add-don'>
             
              
-        <Button color="success">Ajouter Bien</Button></Link></Col>
+        <Button color="success">Ajouter Don</Button></Link></Col>
                  </Row></Container>
            
                <Table responsive>       
@@ -68,8 +68,8 @@ class ListBien extends Component {
         </Table>
     
             {
-               biens.map((el,index)=>
-            <BienItem key={index} item={el}/>
+               dons.map((el,index)=>
+            <ItemDon key={index} item={el}/>
         )}  
    
 
@@ -86,18 +86,18 @@ class ListBien extends Component {
 
 const mapStateToProps=(state)=>
 {  return {
-    biens:state.reducersbiens
+    dons:state.reducersdons
 }
 }
 
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        updateBienReducer:biens=>
+        updateDonReducer:dons=>
         {
             dispatch({
-                type:'UPDATE_BIEN',
-                biens
+                type:'UPDATE_DON',
+                dons
             })
         }
         
@@ -105,4 +105,4 @@ const mapDispatchToProps=(dispatch)=>
 }
 
  
-export default connect(mapStateToProps,mapDispatchToProps)(ListBien);
+export default connect(mapStateToProps,mapDispatchToProps)(ListDon);

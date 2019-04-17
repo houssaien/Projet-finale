@@ -7,16 +7,17 @@ import { Button, Table } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import './formuser.css'
 
-class ItemBien extends Component {
+
+class ItemDon extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
 
-    deleteBien=()=>
+    deleteDon=()=>
     {  const {item} = this.props
-    axios.delete(`/delete-bien/${item._id}`)   
-  .then(()=>this.props.deleteBienReducer(item._id)) 
+    axios.delete(`/delete-dons/${item._id}`)   
+  .then(()=>this.props.deleteDonReducer(item._id)) 
   .catch((err)=>alert(err)) 
     }
     render() { 
@@ -49,15 +50,15 @@ class ItemBien extends Component {
         <th className='col-lg-6'>
                    
 
-                    <Link to={`/detail-bien/${item._id}`}>
+                    <Link to={`/detail-don/${item._id}`}>
             <Button color="warning">Détail</Button>
             </Link>
 
-            <Link to={`/editbien/${item._id}`}>
+            <Link to={`/editdon/${item._id}`}>
             <Button color="info">Modifier</Button>
             </Link>
 
-            <Button color="danger"  onClick={this.deleteBien}>Supprimer</Button>{' '}
+            <Button color="danger"  onClick={this.deleteDon}>Supprimer</Button>{' '}
                   </th>
 
                     
@@ -77,14 +78,14 @@ class ItemBien extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        deleteBienReducer:_id=>
+        deleteDonReducer:_id=>
         {
             dispatch({
-                type:'REMOVE_BIEN',
+                type:'REMOVE_DON',
                 _id
             })
         }
     }
 }
  
-export default connect(null,mapDispatchToProps)(ItemBien);
+export default connect(null,mapDispatchToProps)(ItemDon);

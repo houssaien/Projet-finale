@@ -5,9 +5,9 @@ import './add-bien.css'
 import SideBar from './sideBar'
 import { Container, Row, Col } from 'reactstrap';
 
-import { Button, Form, Input} from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
 import axios from 'axios'
-class AddService extends Component {
+class AddDon extends Component {
 
     handleChange=(e)=>
     {
@@ -15,11 +15,11 @@ class AddService extends Component {
            [e.target.name]:e.target.value
        })
     }
-    
-    addService=()=>
+     
+    addDon=()=>
     {
-      axios.post('/add-service',{...this.state})
-       .then(()=>this.props.addServiceReducer({...this.state}))
+      axios.post('/add-don',{...this.state})
+       .then(()=>this.props.addDonReducer({...this.state}))
        .catch((err)=>alert(err)) 
     }
     render() { 
@@ -30,18 +30,18 @@ class AddService extends Component {
                 <Container>
                 <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }}>
-             <center><h1>Ajouter Service</h1></center>
+             <center><h1>Ajouter Don</h1></center>
              <br/>
              <Form>
-             <Input type="text" name="title"  onChange={this.handleChange} placeholder="Titre de Service" required />
+             <Input type="text" name="title"  onChange={this.handleChange} placeholder="Titre de Don" required />
              <br/>
-             <Input type="textarea" name="description"  onChange={this.handleChange} placeholder="Description de Service" required/>
+             <Input type="textarea" name="description"  onChange={this.handleChange} placeholder="Description de Don" required/>
         
              <br/>
              <Input type="number" name="tel"  onChange={this.handleChange} placeholder="Votre numéro de télephone" required/>
              <br/>
                 
-             <Input type="file" name="imageUrl"  accept="image/*" onChange={this.handleChange} placeholder="Image de Service" required/>
+             <Input type="file" name="imageUrl"  accept="image/*" onChange={this.handleChange} placeholder="Image de Don" required/>
 <br/>
 
                 <center>
@@ -73,11 +73,11 @@ class AddService extends Component {
             <option>Zaghouan</option>
             
           </Input>
-             <Link to='/Liste-services'>
+             <Link to='/Liste-dons'>
              <br/>
              <br/>
           
-            <Button onClick={this.addService} color="success">Ajouter Service</Button></Link>
+            <Button onClick={this.addDon} color="success">Ajouter Don</Button></Link>
             <br/>
              <br/>
              <br/>
@@ -95,14 +95,14 @@ class AddService extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        addServiceReducer:newservice=>
+        addDonReducer:newdon=>
         {
             dispatch({
-                type:'ADD_SERVICE',
-                newservice
+                type:'ADD_DON',
+                newdon
             })
         }
     }
 }
  
-export default connect(null,mapDispatchToProps)(AddService);
+export default connect(null,mapDispatchToProps)(AddDon);

@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 
 
 import './user-management.css'
+import ListDon from './listeDon';
 import SideBar from './sideBar';
-import ListEvents  from './liste-events'
 
 
-class EventManagement extends Component {
+class DonManagement extends Component {
     state = {  }
     render() { 
         return (<div> 
             <SideBar/>
             
            
-          <ListEvents />
+          <ListDon/>
           </div>);
     }
 }
  
-export default EventManagement;
+export default DonManagement;

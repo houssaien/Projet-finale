@@ -3,10 +3,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { Table,Button } from 'reactstrap';
-import  { Fragment } from "react";
+
 import { Container, Row, Col } from 'reactstrap';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import ItemService from './item-service'
 
 class ListService extends Component {
     constructor(props) {
@@ -22,77 +23,64 @@ class ListService extends Component {
       
     
     render() { 
-        const {service}=this.props
+        const {services}=this.props
         return ( 
-            <div >
-           
-                 <Container>
-                 <Row>
-          <Col  sm={{ size: 'auto', offset: 1 }} >
-          <br/>   <br/>   <br/>
-          <h1>Gestion des Services</h1>
-          <Container>
-        <Row>
-        <Col xs="12" sm="10"> </Col>
-
-        <Col xs="12" sm="2">  
-        <Link to='/add-service'>
-        <Button color="success">Ajouter Service</Button>{' '}
-        </Link>
-        </Col>
+          <div>
+          <div className="bord">
         
-                 </Row></Container>
-               <Table responsive>         
-      <thead>
-          <tr>
-          <th>N°</th>
-          <th>Titre</th>
-        
-          
-          <th>Location</th>
-          <th>Image</th>
-          <th>Date</th>
-          <th>Action</th>
-          </tr>
-        </thead>
-     
-     
-        <tbody>
-      {service.map((ItemService, i) => {
-        return (
-          <Fragment>
-            <tr key={i}  >
+               <Container>
               
-              <td>{i}</td>
-              <td>{ItemService.title}</td>
-              <td>{ItemService.location}</td>
-              <td>{ItemService.imageUrl}</td>
-                <td>{ItemService.date}</td>
-                <td>
-                <Button color="warning">Détails</Button>{' '}
-                <Link to='/remove-service'> 
-                   <Button color="danger">Supprimer</Button>{' '}
-                </Link>
-                </td>
-            </tr>
-            
-          </Fragment>
-        );
-      })}
-    </tbody>
+        <br/>   <br/>   <br/>
+        <h1>Gestion des Services</h1>
+        <Container>
+      <Row>
+      <Col xs="12" sm="9"> </Col>
+      <Col xs="12" sm="3">  
+      <Link to='/add-service'>
+          
+           
+      <Button color="success">Ajouter Service</Button></Link></Col>
+               </Row></Container>
+         
+             <Table responsive>       
+    <thead >
+    
+        <tr>
+        <th className='col-lg-2'>N°</th>
+        <th className='col-lg-2'>Titre</th>
+      
+        
+        <th className='col-lg-2'>Location</th>
+        
+       
+        <th className='col-lg-6'>Action</th>
+        </tr>
+       
+      </thead>
+     
+   
+      </Table>
+  
+          {
+             services.map((el,index)=>
+          <ItemService key={index} item={el}/>
+      )}  
+ 
 
 
-         </Table>
-         </Col></Row>
-         </Container>
-         </div> 
+       
+    
+       </Container>
+       </div>
+      
+       </div> 
         );
     }
 } 
 
 const mapStateToProps=(state)=>
 {  return {
-    service:state.reducerservices
+    services:state.reducerservices
 }
 }
 

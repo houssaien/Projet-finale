@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import axios from 'axios'
-import  { Fragment } from "react";
-import { Container, Row, Col } from 'reactstrap';
 import { Button, Table } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import './formuser.css'
 
-class ItemBien extends Component {
+class ItemService extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
 
-    deleteBien=()=>
+    deleteService=()=>
     {  const {item} = this.props
-    axios.delete(`/delete-bien/${item._id}`)   
-  .then(()=>this.props.deleteBienReducer(item._id)) 
+    axios.delete(`/delete-service/${item._id}`)   
+  .then(()=>this.props.deleteServiceReducer(item._id)) 
   .catch((err)=>alert(err)) 
     }
     render() { 
@@ -24,24 +22,12 @@ class ItemBien extends Component {
 
   return (
 <div>
- 
-
-        
-          
-     
-<Table responsive>       
-      <thead >
       
-
-
-
-                
+<Table responsive>       
+      <thead > 
                 <tr >
                
-        <th className='col-lg-2'>
-        
-        
-        {item._id}</th>
+        <th className='col-lg-2'>{item._id}</th>
         <th className='col-lg-2'>{item.title}</th>
         <th className='col-lg-2'>{item.location}</th>
                                       
@@ -49,15 +35,15 @@ class ItemBien extends Component {
         <th className='col-lg-6'>
                    
 
-                    <Link to={`/detail-bien/${item._id}`}>
+                    <Link to={`/detail-Service/${item._id}`}>
             <Button color="warning">Détail</Button>
             </Link>
 
-            <Link to={`/editbien/${item._id}`}>
+            <Link to={`/editservice/${item._id}`}>
             <Button color="info">Modifier</Button>
             </Link>
 
-            <Button color="danger"  onClick={this.deleteBien}>Supprimer</Button>{' '}
+            <Button color="danger"  onClick={this.deleteService}>Supprimer</Button>{' '}
                   </th>
 
                     
@@ -77,14 +63,14 @@ class ItemBien extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        deleteBienReducer:_id=>
+        deleteServiceReducer:_id=>
         {
             dispatch({
-                type:'REMOVE_BIEN',
+                type:'REMOVE_SERVICE',
                 _id
             })
         }
     }
 }
  
-export default connect(null,mapDispatchToProps)(ItemBien);
+export default connect(null,mapDispatchToProps)(ItemService);

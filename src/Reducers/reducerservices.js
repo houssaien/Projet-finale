@@ -29,7 +29,15 @@ case 'UPDATE_SERVICE':
  case 'REMOVE_SERVICE':
     return (
           state.filter(el=>el._id!==action._id)
- )     
+ )   
+ case 'EDIT_SERVICE':
+ return (
+     state.map(el=>el._id===action.editservice._id? el=action.editservice:el)
+ )  
+ case 'DETAIL_SERVICE':
+ return (
+     state.map(el=>el._id===action.editservice._id? el=action.editservice:el)
+ )
 
 default :
 return state

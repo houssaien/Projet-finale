@@ -7,7 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 import { Button, Form, Input} from 'reactstrap';
 import axios from 'axios'
-class AddService extends Component {
+class AddEvent extends Component {
 
     handleChange=(e)=>
     {
@@ -16,10 +16,10 @@ class AddService extends Component {
        })
     }
     
-    addService=()=>
+    addEvent=()=>
     {
-      axios.post('/add-service',{...this.state})
-       .then(()=>this.props.addServiceReducer({...this.state}))
+      axios.post('/add-event',{...this.state})
+       .then(()=>this.props.addEventReducer({...this.state}))
        .catch((err)=>alert(err)) 
     }
     render() { 
@@ -30,18 +30,18 @@ class AddService extends Component {
                 <Container>
                 <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }}>
-             <center><h1>Ajouter Service</h1></center>
+             <center><h1>Ajouter Event</h1></center>
              <br/>
              <Form>
-             <Input type="text" name="title"  onChange={this.handleChange} placeholder="Titre de Service" required />
+             <Input type="text" name="title"  onChange={this.handleChange} placeholder="Titre de Event" required />
              <br/>
-             <Input type="textarea" name="description"  onChange={this.handleChange} placeholder="Description de Service" required/>
+             <Input type="textarea" name="description"  onChange={this.handleChange} placeholder="Description de Event" required/>
         
              <br/>
              <Input type="number" name="tel"  onChange={this.handleChange} placeholder="Votre numéro de télephone" required/>
              <br/>
                 
-             <Input type="file" name="imageUrl"  accept="image/*" onChange={this.handleChange} placeholder="Image de Service" required/>
+             <Input type="file" name="imageUrl"  accept="image/*" onChange={this.handleChange} placeholder="Image de Event" required/>
 <br/>
 
                 <center>
@@ -73,11 +73,11 @@ class AddService extends Component {
             <option>Zaghouan</option>
             
           </Input>
-             <Link to='/Liste-services'>
+             <Link to='/Liste-events'>
              <br/>
              <br/>
           
-            <Button onClick={this.addService} color="success">Ajouter Service</Button></Link>
+            <Button onClick={this.addEvent} color="success">Ajouter Event</Button></Link>
             <br/>
              <br/>
              <br/>
@@ -95,14 +95,14 @@ class AddService extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        addServiceReducer:newservice=>
+        addEventReducer:newevent=>
         {
             dispatch({
-                type:'ADD_SERVICE',
-                newservice
+                type:'ADD_EVENT',
+                newevent
             })
         }
     }
 }
  
-export default connect(null,mapDispatchToProps)(AddService);
+export default connect(null,mapDispatchToProps)(AddEvent);
