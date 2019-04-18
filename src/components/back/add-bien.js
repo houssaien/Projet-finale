@@ -9,6 +9,14 @@ import { Button, Form, FormGroup, Label, Input, FormText, CustomInput } from 're
 import axios from 'axios'
 class AddBien extends Component { 
 
+    constructor(props)
+    {
+        super(props)
+        this.state={
+          
+            confirmation:'en attente'
+        }
+    }
     handleChange=(e)=>
     {
        this.setState({
@@ -22,6 +30,16 @@ class AddBien extends Component {
        .then(()=>this.props.addBienReducer({...this.state}))
        .catch((err)=>alert(err)) 
     }
+
+    onImageChange = (event) => {
+        if (event.target.files && event.target.files[0]) {
+          let reader = new FileReader();
+          reader.onload = (e) => {
+            this.setState({imageUrl: e.target.result});
+          };
+          reader.readAsDataURL(event.target.files[0]);
+        }
+      }
     render() { 
         return ( 
             <div>
@@ -40,13 +58,16 @@ class AddBien extends Component {
              <br/>
              <Input type="number" name="tel"  onChange={this.handleChange} placeholder="Votre numéro de télephone" required/>
              <br/>
-                
-             <Input type="file" name="imageUrl"  accept="image/*" onChange={this.handleChange} placeholder="Image de Bien" required/>
+             <input type="file"  name="imageUrl" onChange={this.onImageChange} className="filetype" id="group_image"/>
+             
 <br/>
 
                 <center>
                 <br/>
+                {this.state.confirmation}
+                <br/>
                 <Input type="select" name="location" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
+            <option>-- Selectionner votre gouvernorat --</option>
             <option>Ariana</option>
             <option>Béja</option>
             <option>Ben Arous</option>

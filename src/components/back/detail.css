@@ -1,10 +1,4 @@
-.detail-container{
-    border-radius: 25px;
-    border-color: black;
-    background: rgba(230, 230, 250, 0.863);
-    padding: 20px;
-    margin-top: 40px;
-}
-.detail-container h5{
-   color:  rgba(122, 122, 224, 0.863)
+.card{
+max-width: 500px;
+
 }

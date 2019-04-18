@@ -2,20 +2,37 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { Button } from 'reactstrap';
-import { Container, Row, Col } from 'reactstrap';
 
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+
+import Typography from '@material-ui/core/Typography';
 import axios from 'axios'
 import './detail.css'
 import SideBar from './sideBar';
 class DetailBien extends Component {
+    
     constructor(props)
     {
+        const styles = {
+            card: {
+              maxWidth: 345,
+            },
+            media: {
+              // ⚠️ object-fit is not supported by IE 11.
+              objectFit: 'cover',
+            },
+          };
         super(props)
         this.state={
             title:"",
             description:'',
             imageUrl:'',
-            location:''
+            location:'',
+            confirmation:'en attente'
         }
     }
 
@@ -38,49 +55,79 @@ class DetailBien extends Component {
         title:this.state.title,
         description:this.state.description,
         imageUrl:this.state.imageUrl,
-        location:this.state.location
+        location:this.state.location,
+        confirmation:this.state.confirmation
      }) 
       .then(()=>this.props.detailBienReducer({...this.state})) 
       .catch((err)=>alert(err))
     }
 
     render() { 
+        
         console.log(this.props.biens)
         return ( 
             
             <div>
                 <SideBar/>
-            <Container>
+                <br/>
+                <br/>
+                
+            
+<center>
+            <Card className="card">
+            <center>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          alt="Contemplative Reptile"
+        
+          img id="target" src={this.state.imageUrl}    width="20px" height="20px"
+          title="Contemplative Reptile"
+        />
+      </CardActionArea>
+      </center>
+      <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+          Titre: 
+          </Typography>
+          <Typography component="p">
+          {this.state.title}
+          </Typography>
+        <br/>
+          <Typography gutterBottom variant="h5" component="h2">
+          Description: 
+          </Typography>
 
-                <Row>
-                <Col sm="12" md={{ size: 6, offset: 3 }}>
-                <div className='detail-container'>
-            <center><h1>Détail Bien</h1></center>
+          <Typography component="p">
+          {this.state.description}
+          </Typography> 
 
-           
-            <h5>title :</h5>
-              {this.state.title}
-              <br/>
-            <h5> description :</h5>
-             {this.state.description}
-             <br/>
-             <h5>imageUrl :</h5>
-             {this.state.imageUrl}
-             <br/>
-             <h5>location :</h5>{this.state.location}
-             
-             <br/>
+          <br/>
+          <Typography gutterBottom variant="h5" component="h2">
+          Lieu: 
+          </Typography>
 
-             
+          <Typography component="p">
+          {this.state.location} 
+          </Typography> 
+
+
+        </CardContent>
+      <center>
+     
+   
              <Link to='/Bien-Management'>
-             <Button onClick={this.editBien} color="info" className="button-detail">Modifier Bien</Button>{' '}
+            
+             <Button color="info">Retour</Button>{' '}
+            
              </Link>
             
 
-             </div>
-             </Col>
-             </Row>
-             </Container>
+     
+      </center>
+      
+    </Card>
+    </center>
              </div>
          );
     }

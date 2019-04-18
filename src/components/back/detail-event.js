@@ -69,12 +69,12 @@ class DetailEvent extends Component {
              {this.state.location}
              <br/>
 
-             
+             <center>
              <Link to='/Liste-Events'>
              {/* <button onClick={this.editEvent}>Modifier Event</button> */}
-             <Button  color="info" className="button-detail">Cancel</Button>{' '}
+             <Button  color="info" className="button-detail">Retour</Button>{' '}
              </Link>
-            
+             </center>
 
             </div>
              </Col>

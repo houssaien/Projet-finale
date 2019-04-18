@@ -20,7 +20,7 @@ class ItemBien extends Component {
   .catch((err)=>alert(err)) 
     }
     render() { 
-    const {item}=this.props
+    const {item,num}=this.props
 
   return (
 <div>
@@ -41,12 +41,12 @@ class ItemBien extends Component {
         <th className='col-lg-2'>
         
         
-        {item._id}</th>
+        {num}</th>
         <th className='col-lg-2'>{item.title}</th>
         <th className='col-lg-2'>{item.location}</th>
-                                      
+        <th className='col-lg-2'>{item.confirmation}</th>                        
                  
-        <th className='col-lg-6'>
+        <th className='col-lg-4'>
                    
 
                     <Link to={`/detail-bien/${item._id}`}>
