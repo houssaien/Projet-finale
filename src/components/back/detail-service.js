@@ -64,7 +64,8 @@ class DetailService extends Component {
              {this.state.description}
              <br/>
              <h5>imageUrl :</h5>
-             {this.state.imageUrl}
+             <center><img src={this.state.imageUrl} /></center>
+             
              <br/>
              <h5>location :</h5>
              {this.state.location}

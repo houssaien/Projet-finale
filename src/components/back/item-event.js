@@ -18,7 +18,7 @@ class ItemEvent extends Component {
   .catch((err)=>alert(err)) 
     }
     render() { 
-    const {item}=this.props
+    const {item,num}=this.props
 
   return (
 <div>
@@ -27,7 +27,7 @@ class ItemEvent extends Component {
       <thead > 
                 <tr >
                
-        <th className='col-lg-2'>{item._id}</th>
+        <th className='col-lg-2'>{num}</th>
         <th className='col-lg-2'>{item.title}</th>
         <th className='col-lg-2'>{item.location}</th>
                                       
