@@ -44,7 +44,7 @@ export default props => {
                   
                 </div>
                 <br/><br/>
-        <a className="menu-item" href="/Dashbord">
+        <a className="menu-item" href="/back">
       <i class="fas fa-home icon-sidebar"></i>
         Dashbord
       </a>

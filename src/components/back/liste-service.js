@@ -63,7 +63,7 @@ class ListService extends Component {
   
           {
              services.map((el,index)=>
-          <ItemService key={index} item={el}/>
+          <ItemService key={index} item={el} num={index}/>
       )}  
  
 

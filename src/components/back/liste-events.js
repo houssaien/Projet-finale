@@ -62,7 +62,7 @@ class ListEvent extends Component {
   
           {
              events.map((el,index)=>
-          <ItemEvent key={index} item={el}/>
+          <ItemEvent key={index} item={el} num={index} />
       )}  
  
 

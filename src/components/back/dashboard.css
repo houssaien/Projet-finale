@@ -1,0 +1,22 @@
+.card{
+    border-radius: 23px !important;
+    background-color: aliceblue !important;
+}
+.admin-dashboard{
+    background-image: linear-gradient(to right bottom, #a45cf4, #9676f7, #8f8bf5, #919cee, #9aabe4, #98a9dc, #97a7d4, #96a5cc, #8394c6, #7083bf, #5e73b8, #4c62b1);
+    width: 100% !important;
+    height: 1050% !important;
+}
+.link-admin{
+    color: rgb(4, 102, 194);
+    font-size: 34px !important;
+    padding-bottom: 23px;
+   }
+ .button-dashboard{
+       font-family: sans-serif;
+       font-size: 34px;
+       color: rgb(36, 35, 35);
+      
+       width: 100% !important;
+       margin-top: 100px !important;
+ }  

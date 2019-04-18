@@ -15,6 +15,15 @@ class AddService extends Component {
            [e.target.name]:e.target.value
        })
     }
+    onImageChange = (event) => {
+        if (event.target.files && event.target.files[0]) {
+          let reader = new FileReader();
+          reader.onload = (e) => {
+            this.setState({imageUrl: e.target.result});
+          };
+          reader.readAsDataURL(event.target.files[0]);
+        }
+      }
     
     addService=()=>
     {
@@ -41,7 +50,7 @@ class AddService extends Component {
              <Input type="number" name="tel"  onChange={this.handleChange} placeholder="Votre numéro de télephone" required/>
              <br/>
                 
-             <Input type="file" name="imageUrl"  accept="image/*" onChange={this.handleChange} placeholder="Image de Service" required/>
+             <Input type="file" name="imageUrl"   onChange={this.onImageChange} />
 <br/>
 
                 <center>
