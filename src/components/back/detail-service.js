@@ -70,11 +70,11 @@ class DetailService extends Component {
              <h5>location :</h5>
              {this.state.location}
              <br/>
-
+             <br/> <br/>
              
              <Link to='/Liste-services'>
              {/* <button onClick={this.editService}>Modifier Service</button> */}
-             <Button  color="info" className="button-detail">Cancel</Button>{' '}
+           <center>  <Button  color="info" className="button-detail">Retour</Button>{' '}</center>
              </Link>
             
 

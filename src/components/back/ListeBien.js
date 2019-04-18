@@ -57,9 +57,9 @@ class ListBien extends Component {
         
           
           <th className='col-lg-2'>Location</th>
-          
+          <th className='col-lg-2'>Confirmation</th>
          
-          <th className='col-lg-6'>Action</th>
+          <th className='col-lg-4'>Action</th>
           </tr>
          
         </thead>
@@ -69,7 +69,7 @@ class ListBien extends Component {
     
             {
                biens.map((el,index)=>
-            <BienItem key={index} item={el}/>
+            <BienItem key={index} item={el} num={index}/>
         )}  
    
 

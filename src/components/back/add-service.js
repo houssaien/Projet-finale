@@ -56,6 +56,7 @@ class AddService extends Component {
                 <center>
                 <br/>
                 <Input type="select" name="location" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
+             <option>-- Selectionner votre gouvernorat --</option>
             <option>Ariana</option>
             <option>Béja</option>
             <option>Ben Arous</option>

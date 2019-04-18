@@ -24,12 +24,13 @@ export default props => {
             */}
            
           </MDBNavbarNav>
+          <MDBNavbarNav center>              <img src={Logo} alt="/" width="100px" height="150px" />
+</MDBNavbarNav>
           <MDBNavbarNav right>
          
             <MDBNavItem>
               <MDBFormInline waves>
-              <img src={Logo} alt="/" width="100px" height="100px" />
-              <Link to="/notifications"><i class="fas fa-bell notif" width="10px" height="10px"></i></Link>
+              <Link to="/notifications"><i class="fas fa-bell notif" width="10px" height="20px"></i></Link>
               </MDBFormInline>
             </MDBNavItem>
           </MDBNavbarNav>
