@@ -15,7 +15,9 @@ class EditService extends Component {
             title:"",
             description:'',
             imageUrl:'',
-            location:''
+            location:'',
+            confirmation:'',
+            Categservice:''
         }
     }
 
@@ -38,7 +40,9 @@ class EditService extends Component {
         title:this.state.title,
         description:this.state.description,
         imageUrl:this.state.imageUrl,
-        location:this.state.location
+        location:this.state.location,
+        confirmation:this.state.confirmation,
+        Categservice:this.state.Categservice,
      }) 
       .then(()=>this.props.editServiceReducer({...this.state})) 
       .catch((err)=>alert(err))
@@ -49,7 +53,7 @@ class EditService extends Component {
         return ( 
             <div>
                 <SideBar/>
-                
+                <br/>
                 <Container>
                 <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }}>
@@ -69,10 +73,66 @@ class EditService extends Component {
              
              <Input type="text" name="imageUrl"  accept="image/*" value={this.state.imageUrl} onChange={this.handleChange} placeholder="Image de Service" />
 
-             location :
+             Lieu :
              {/* <input  type='text' name='location' value={this.state.location} onChange={this.handleChange}/> */}
-             <Input type="text" name="location" value={this.state.location} onChange={this.handleChange} />
+             <Input type="select" name="location" onChange={this.handleChange} required>
+             <option>{this.state.location}</option>
+             <option>Ariana</option>
+            <option>Béja</option>
+            <option>Ben Arous</option>
+            <option>Bizerte</option>
+            <option>Gabès</option>
+            <option>Gafsa</option>
+            <option>Jendouba</option>
+            <option>Kairouan</option>
+            <option>Kasserine</option>
+            <option>Kébili</option>
+            <option>Kef</option>
+            <option>Mahdia</option>
+            <option>Manouba	</option>
+            <option>Médenine</option>
+            <option>Monastir</option>
+            <option>Nabeul</option>
+            <option>Sfax</option>
+            <option>Sidi Bouzid	</option>
+            <option>Siliana</option>
+            <option>Sousse</option>
+            <option>Tataouine</option>
+            <option>Tozeur</option>
+            <option>Tunis</option>
+            <option>Zaghouan</option>
+            </Input>
+
+
+
+             Confirmation :
+             {/* <input  type='text' name='location' value={this.state.location} onChange={this.handleChange}/> */}
+             <Input type="select" name="confirmation" onChange={this.handleChange} required>
+             <option>{this.state.confirmation}</option>
+            <option>en attente</option>
+            <option>confirme</option>
+            </Input>
             
+
+             Categservice :
+             {/* <input  type='text' name='location' value={this.state.location} onChange={this.handleChange}/> */}
+             <Input type="select" name="Categservice" value={this.state.Categservice} onChange={this.handleChange} required>
+             <option>{this.state.Categservice}</option>
+             <option>Beauté Bien-être</option>
+            <option>Travail</option>
+            <option>Maison</option>
+            <option>Aide à la personne</option>
+            <option>Cours</option>
+            <option>Loisirs</option>
+            <option>Bricolage</option>
+            <option>Véhicules</option>
+            <option>Vacances</option>
+            <option>Mode</option>
+            </Input>
+
+
+          
+
              <Link to='/Liste-services'>
              <Button onClick={this.editService}color="info">Modifier Service</Button>
              </Link>

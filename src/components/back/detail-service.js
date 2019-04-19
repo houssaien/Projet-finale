@@ -4,9 +4,13 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import { Button } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
-
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 import './detail.css'
-import Sidebar from './sideBar'
+import SideBar from './sideBar';
 class DetailService extends Component {
     constructor(props)
     {
@@ -15,7 +19,9 @@ class DetailService extends Component {
             title:"",
             description:'',
             imageUrl:'',
-            location:''
+            location:'',
+            confirmation:'en attente',
+            Categservice:''
         }
     }
 
@@ -38,7 +44,9 @@ class DetailService extends Component {
         title:this.state.title,
         description:this.state.description,
         imageUrl:this.state.imageUrl,
-        location:this.state.location
+        location:this.state.location,
+        confirmation:this.state.confirmation,
+        Categservice:this.state.Categservice
      }) 
       .then(()=>this.props.detailServiceReducer({...this.state})) 
       .catch((err)=>alert(err))
@@ -47,42 +55,87 @@ class DetailService extends Component {
     render() { 
         return ( 
             <div>
-                <Sidebar/>
-                
-            <Container>
+            <SideBar/>
+            <br/>
+            <br/>
+            
+        
+<center>
+        <Card className="card">
+        <center>
+  <CardActionArea>
+    <CardMedia
+      component="img"
+      alt="Contemplative Reptile"
+    
+      img id="target" src={this.state.imageUrl}    width="20px" height="20px"
+      title="Contemplative Reptile"
+    />
+  </CardActionArea>
+  </center>
+  <CardContent>
+      <Typography gutterBottom variant="h5" component="h2">
+      Titre: 
+      </Typography>
+      <Typography component="p">
+      {this.state.title}
+      </Typography>
+    <br/>
+      <Typography gutterBottom variant="h5" component="h2">
+      Description: 
+      </Typography>
 
-            <Row>
-          <Col sm="12" md={{ size: 6, offset: 3 }}>
-            <div className='detail-container'>
-            <center><h1>Détail Service</h1></center>
+      <Typography component="p">
+      {this.state.description}
+      </Typography> 
 
-           
-           <h5> title :</h5>
-              {this.state.title}
-              <br/>
-            <h5> description :</h5>
-             {this.state.description}
-             <br/>
-             <h5>imageUrl :</h5>
-             <center><img src={this.state.imageUrl} /></center>
-             
-             <br/>
-             <h5>location :</h5>
-             {this.state.location}
-             <br/>
-             <br/> <br/>
-             
-             <Link to='/Liste-services'>
+      <br/>
+      <Typography gutterBottom variant="h5" component="h2">
+      Lieu: 
+      </Typography>
+
+      <Typography component="p">
+      {this.state.location} 
+      </Typography> 
+      <br/>
+      <Typography gutterBottom variant="h5" component="h2">
+      Confirmation: 
+      </Typography>
+
+      <Typography component="p">
+      {this.state.confirmation} 
+      </Typography> 
+
+      <br/>
+      <Typography gutterBottom variant="h5" component="h2">
+      Catégorie: 
+      </Typography>
+
+      <Typography component="p">
+      {this.state.Categservice} 
+      </Typography> 
+
+
+
+
+
+
+    </CardContent>
+  <center>
+ 
+
+         
+  <Link to='/Liste-services'>
              {/* <button onClick={this.editService}>Modifier Service</button> */}
            <center>  <Button  color="info" className="button-detail">Retour</Button>{' '}</center>
              </Link>
-            
 
-            </div>
-             </Col>
-             </Row>
-             </Container> 
-             </div>
+ 
+  </center>
+  
+</Card>
+</center>
+         </div>
          );
     }
 }

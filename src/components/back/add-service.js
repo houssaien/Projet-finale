@@ -9,6 +9,14 @@ import { Button, Form, Input} from 'reactstrap';
 import axios from 'axios'
 class AddService extends Component {
 
+  constructor(props)
+  {
+      super(props)
+      this.state={
+        
+          confirmation:'en attente'
+      }
+  }
     handleChange=(e)=>
     {
        this.setState({
@@ -48,13 +56,11 @@ class AddService extends Component {
         
              <br/>
              <Input type="number" name="tel"  onChange={this.handleChange} placeholder="Votre numéro de télephone" required/>
-             <br/>
-                
-             <Input type="file" name="imageUrl"   onChange={this.onImageChange} />
+             
 <br/>
 
                 <center>
-                <br/>
+                
                 <Input type="select" name="location" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
              <option>-- Selectionner votre gouvernorat --</option>
             <option>Ariana</option>
@@ -83,6 +89,28 @@ class AddService extends Component {
             <option>Zaghouan</option>
             
           </Input>
+          <br/>
+
+          <Input type="select" name="Categservice" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
+             <option>-- Selectionner Catégorie de votre Service --</option>
+            <option>Beauté Bien-être</option>
+            <option>Travail</option>
+            <option>Maison</option>
+            <option>Aide à la personne</option>
+            <option>Cours</option>
+            <option>Loisirs</option>
+            <option>Bricolage</option>
+            <option>Véhicules</option>
+            <option>Vacances</option>
+            <option>Mode</option>
+            
+            
+          </Input>
+
+          <br/>
+                
+             <Input type="file" name="imageUrl"   onChange={this.onImageChange} />
+             <br/>
              <Link to='/Liste-services'>
              <br/>
              <br/>

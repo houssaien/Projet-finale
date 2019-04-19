@@ -63,8 +63,7 @@ class AddBien extends Component {
 <br/>
 
                 <center>
-                <br/>
-                {this.state.confirmation}
+                
                 <br/>
                 <Input type="select" name="location" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
             <option>-- Selectionner votre gouvernorat --</option>
@@ -94,11 +93,25 @@ class AddBien extends Component {
             <option>Zaghouan</option>
             
           </Input>
+<br/>
+          <Input type="select" name="Categbien" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
+             <option>-- Selectionner Catégorie de votre Bien --</option>
+            <option>Immobilier</option>
+            <option>Véhicules</option>
+            <option>Pour la Maison et Jardin</option>
+            <option>Loisirs et Divertissement</option>
+            <option>Informatique et Multimedia</option>
+            <option>Habillement et Bien Etre</option>
+            <option>Autres</option>
+            
+            
+            
+          </Input>
              <Link to='/Bien-Management'>
              <br/>
              <br/>
           
-            <Button onClick={this.addBien} color="success">Ajouter Bien</Button></Link>
+            <Button onClick={this.addBien} color="success"><i class="arrow up icon"></i>Ajouter Bien</Button></Link>
             <br/>
              <br/>
              <br/>

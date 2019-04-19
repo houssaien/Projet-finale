@@ -107,6 +107,14 @@ class DetailEvent extends Component {
       {this.state.location} 
       </Typography> 
 
+      <br/>
+      <Typography gutterBottom variant="h5" component="h2">
+      Confirmation: 
+      </Typography>
+
+      <Typography component="p">
+      {this.state.confirmation} 
+      </Typography> 
 
     </CardContent>
   <center>

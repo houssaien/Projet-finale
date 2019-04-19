@@ -54,12 +54,12 @@ class ListDon extends Component {
           <tr>
           <th className='col-lg-2'>N°</th>
           <th className='col-lg-2'>Titre</th>
-        
+          <th className='col-lg-2'>Lieu</th>
           
-          <th className='col-lg-2'>Location</th>
+          <th className='col-lg-2'>Confirmation</th>
           
          
-          <th className='col-lg-6'>Action</th>
+          <th className='col-lg-4'>Action</th>
           </tr>
          
         </thead>
@@ -69,7 +69,7 @@ class ListDon extends Component {
     
             {
                dons.map((el,index)=>
-            <ItemDon key={index} item={el}/>
+            <ItemDon key={index} item={el} num={index}/>
         )}  
    
 

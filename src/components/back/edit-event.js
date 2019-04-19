@@ -78,15 +78,42 @@ class EditEvent extends Component {
           </Typography>
 
           <Typography component="p">
-          <Input type="text" name="description"  value={this.state.description} onChange={this.handleChange}/>
+          <Input type="textarea" name="description"  value={this.state.description} onChange={this.handleChange}/>
           </Typography> 
 
           <br/>
           <Typography gutterBottom variant="h5" component="h2">
-          Lieu: 
+          Lieu :
           </Typography>
           <Typography component="p">
-          <Input type="text" name="location" value={this.state.location} onChange={this.handleChange}/>
+    
+             <Input type="select" name="location" onChange={this.handleChange} required>
+             <option>{this.state.location}</option>
+             <option>Ariana</option>
+            <option>Béja</option>
+            <option>Ben Arous</option>
+            <option>Bizerte</option>
+            <option>Gabès</option>
+            <option>Gafsa</option>
+            <option>Jendouba</option>
+            <option>Kairouan</option>
+            <option>Kasserine</option>
+            <option>Kébili</option>
+            <option>Kef</option>
+            <option>Mahdia</option>
+            <option>Manouba	</option>
+            <option>Médenine</option>
+            <option>Monastir</option>
+            <option>Nabeul</option>
+            <option>Sfax</option>
+            <option>Sidi Bouzid	</option>
+            <option>Siliana</option>
+            <option>Sousse</option>
+            <option>Tataouine</option>
+            <option>Tozeur</option>
+            <option>Tunis</option>
+            <option>Zaghouan</option>
+            </Input>
           </Typography> 
           <br/>
           <Typography gutterBottom variant="h5" component="h2">
@@ -94,7 +121,7 @@ class EditEvent extends Component {
           </Typography>
           <Typography component="p">
           <Input type="select" name="confirmation" onChange={this.handleChange} required>
-             <option>-- Selectionner votre Confirmation --</option>
+             <option>{this.state.confirmation}</option>
             <option>En attente</option>
             <option>confirme</option>
             </Input>

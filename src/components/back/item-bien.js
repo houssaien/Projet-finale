@@ -43,8 +43,16 @@ class ItemBien extends Component {
         
         {num}</th>
         <th className='col-lg-2'>{item.title}</th>
-        <th className='col-lg-2'>{item.location}</th>
-        <th className='col-lg-2'>{item.confirmation}</th>                        
+        <th className='col-lg-2'>{item.Categbien}</th>
+        <th className='col-lg-2'>{item.confirmation === "en attente"?
+          
+          <Button color="danger" size="sm" outline>
+          {item.confirmation}</Button>
+      
+      
+        :<Button color="success" size="sm" outline>{item.confirmation}</Button>
+      }
+        </th>                  
                  
         <th className='col-lg-4'>
                    

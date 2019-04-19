@@ -50,10 +50,10 @@ class ListService extends Component {
         <th className='col-lg-2'>Titre</th>
       
         
-        <th className='col-lg-2'>Location</th>
+        <th className='col-lg-2'>Catégorie</th>
         
-       
-        <th className='col-lg-6'>Action</th>
+        <th className='col-lg-2'>Confirmation</th>
+        <th className='col-lg-4'>Action</th>
         </tr>
        
       </thead>

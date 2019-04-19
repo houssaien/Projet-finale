@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import axios from 'axios'
-import { Button, Table } from 'reactstrap';
+import { Button, Table, Badge } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import './formuser.css'
 
@@ -29,10 +29,19 @@ class ItemService extends Component {
                
         <th className='col-lg-2'>{num}</th>
         <th className='col-lg-2'>{item.title}</th>
-        <th className='col-lg-2'>{item.location}</th>
-                                      
-                 
-        <th className='col-lg-6'>
+        
+      
+        <th className='col-lg-2'>{item.Categservice}</th>                            
+        <th className='col-lg-2'>{item.confirmation === "en attente"?
+          
+          <Button color="danger" size="sm" outline>
+          {item.confirmation}</Button>
+      
+      
+        :<Button color="success" size="sm" outline>{item.confirmation}</Button>
+      }
+        </th>    
+        <th className='col-lg-4'>
                    
 
                     <Link to={`/detail-Service/${item._id}`}>

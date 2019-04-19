@@ -49,7 +49,7 @@ class ListEvent extends Component {
         <th className='col-lg-2'>Titre</th>
       
         
-        <th className='col-lg-2'>Location</th>
+        <th className='col-lg-2'>Lieu</th>
         <th className='col-lg-2'>Confirmation</th>
         
        

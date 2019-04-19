@@ -21,7 +21,7 @@ class ItemDon extends Component {
   .catch((err)=>alert(err)) 
     }
     render() { 
-    const {item}=this.props
+      const {item,num}=this.props
 
   return (
 <div>
@@ -39,15 +39,20 @@ class ItemDon extends Component {
                 
                 <tr >
                
-        <th className='col-lg-2'>
-        
-        
-        {item._id}</th>
+        <th className='col-lg-2'>{num}</th>
         <th className='col-lg-2'>{item.title}</th>
         <th className='col-lg-2'>{item.location}</th>
-                                      
+        <th className='col-lg-2'>{item.confirmation === "en attente"?
+          
+          <Button color="danger" size="sm" outline>
+          {item.confirmation}</Button>
+      
+      
+        :<Button color="success" size="sm" outline>{item.confirmation}</Button>
+      }
+        </th>                            
                  
-        <th className='col-lg-6'>
+        <th className='col-lg-4'>
                    
 
                     <Link to={`/detail-don/${item._id}`}>

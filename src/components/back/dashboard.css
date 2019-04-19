@@ -1,3 +1,5 @@
+
+
 .card{
     border-radius: 23px !important;
     background-color: aliceblue !important;
@@ -10,7 +12,7 @@
 }
 .admin-dashboard h1{
     font-family: "Comic Sans MS", cursive, sans-serif;
-    color: #312557;
+    color: rgb(4, 102, 194);
 }
 .link-admin{
     color: rgb(4, 102, 194);
@@ -41,3 +43,17 @@
  .link-admin{
      color: #3788bb !important;
  }
+
+ .hit-the-floor {
+    color: #fff;
+
+    font-size: 12em;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px white, 0 0 5px white, 0 1px 3px white, 0 3px 5px white, 0 5px 10px white, 0 10px 10px white, 0 20px 20px white;
+    }
+    
+    .hit-the-floor {
+      text-align: center;
+      color: #fff;
+    }

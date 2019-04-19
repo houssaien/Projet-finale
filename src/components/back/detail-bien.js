@@ -32,7 +32,8 @@ class DetailBien extends Component {
             description:'',
             imageUrl:'',
             location:'',
-            confirmation:'en attente'
+            confirmation:'en attente',
+            Categbien:''
         }
     }
 
@@ -56,7 +57,8 @@ class DetailBien extends Component {
         description:this.state.description,
         imageUrl:this.state.imageUrl,
         location:this.state.location,
-        confirmation:this.state.confirmation
+        confirmation:this.state.confirmation,
+        Categbien:this.state.Categbien,
      }) 
       .then(()=>this.props.detailBienReducer({...this.state})) 
       .catch((err)=>alert(err))
@@ -110,6 +112,16 @@ class DetailBien extends Component {
           <Typography component="p">
           {this.state.location} 
           </Typography> 
+
+          <br/>
+          <Typography gutterBottom variant="h5" component="h2">
+          Catégorie: 
+          </Typography>
+
+          <Typography component="p">
+          {this.state.Categbien} 
+          </Typography> 
+
           <br/>
           <Typography gutterBottom variant="h5" component="h2">
           Confirmation: 

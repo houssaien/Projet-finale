@@ -19,8 +19,10 @@ class Dashboard extends Component {
 
      
       <div className="admin-dashboard">
-      <center><h1>Bienvenu, Admin</h1></center>
+      <br/>
+      <center><div class="hit-the-floor"><h1>Bienvenu, Admin</h1></div></center>
       <center>
+        <br/>
       <MDBBtnGroup>
       <Row>
           <Col  sm="12" md={{ size: 6, offset: 1 }}>
