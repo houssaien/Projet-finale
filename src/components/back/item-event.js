@@ -30,9 +30,10 @@ class ItemEvent extends Component {
         <th className='col-lg-2'>{num}</th>
         <th className='col-lg-2'>{item.title}</th>
         <th className='col-lg-2'>{item.location}</th>
+        <th className='col-lg-2'>{item.confirmation}</th>
                                       
                  
-        <th className='col-lg-6'>
+        <th className='col-lg-4'>
                    
 
                     <Link to={`/detail-event/${item._id}`}>

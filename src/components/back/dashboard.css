@@ -1,11 +1,16 @@
 .card{
     border-radius: 23px !important;
     background-color: aliceblue !important;
+   
 }
 .admin-dashboard{
-    background-image: linear-gradient(to right bottom, #a45cf4, #9676f7, #8f8bf5, #919cee, #9aabe4, #98a9dc, #97a7d4, #96a5cc, #8394c6, #7083bf, #5e73b8, #4c62b1);
+    background-image: linear-gradient(to right bottom, #a99ced, #a3a1ee, #9fa6ee, #9babed, #99afec, #91b6ee, #8bbcef, #88c2ee, #81cced, #81d4ea, #89dce4, #96e3dd);
     width: 100% !important;
-    height: 1050% !important;
+    height: 600px !important;
+}
+.admin-dashboard h1{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #312557;
 }
 .link-admin{
     color: rgb(4, 102, 194);
@@ -13,10 +18,26 @@
     padding-bottom: 23px;
    }
  .button-dashboard{
-       font-family: sans-serif;
+       font-family:"Comic Sans MS", cursive, sans-serif;
        font-size: 34px;
        color: rgb(36, 35, 35);
-      
-       width: 100% !important;
-       margin-top: 100px !important;
+      border-color: transparent !important;
+       width:158%!important;
+       margin-top: 67px !important;
+       height: 145px !important;
  }  
+ .b1{
+     background-color: #bf93f1 !important;
+ }
+ .b2{
+    background-color: #ea92f1 !important;
+ }
+ .b3{
+    background-color: #8ddef7 !important; 
+ }
+ .b4{
+    background-color: #ebc77c !important;
+ }
+ .link-admin{
+     color: #3788bb !important;
+ }
