@@ -20,32 +20,48 @@ class Dashboard extends Component {
      
       <div className="admin-dashboard">
       <center><h1>Bienvenu, Admin</h1></center>
+      <center>
       <MDBBtnGroup>
-           <Link to='./add-user'> <MDBBtn color="light" size="lg" className="button-dashboard">
-            <i className="fas fa-user-check  link-admin"></i>
+      <Row>
+          <Col  sm="12" md={{ size: 6, offset: 1 }}>
+      
+           <Link to='./Bien-Management'> <MDBBtn color="light" size="lg" className="button-dashboard b1">
+            <i className="fab fa-product-hunt link-admin"></i>
             <br/>
             BIEN
             </MDBBtn>
             </Link>
-            <Link to='./add-user'> <MDBBtn color="light" size="lg" className="button-dashboard">
-            <i className="fas fa-user-check  link-admin"></i>
+            </Col>
+            <Col  sm="12"  md={{ size: 6, offset: 1 }}>
+      
+            <Link to='./Liste-services'> <MDBBtn color="light" size="lg" className="button-dashboard b2">
+            <i className="fas fa-archive  link-admin"></i>
             <br/>
             SERVICE
             </MDBBtn>
             </Link>
-            <Link to='./add-user'> <MDBBtn color="light" size="lg" className="button-dashboard">
-            <i className="fas fa-user-check  link-admin"></i>
+            </Col>
+            </Row>
+            <Row>
+            <Col  sm="12" md={{ size: 6, offset: 1 }}>
+            <Link to='./Liste-events'> <MDBBtn color="light" size="lg" className="button-dashboard b3">
+            <i className="fas fa-calendar-alt  link-admin"></i>
             <br/>
             EVENTS
             </MDBBtn>
             </Link>
-            <Link to='./add-user'> <MDBBtn color="light" size="lg" className="button-dashboard">
-            <i className="fas fa-user-check  link-admin"></i>
+            </Col>
+            <Col  sm="12" md={{ size: 6, offset: 1 }}>
+            <Link to='./Liste-dons'> <MDBBtn color="light" size="lg" className="button-dashboard b4">
+            <i className="fas fa-hands-helping  link-admin"></i>
             <br/>
             DON
             </MDBBtn>
             </Link>
+            </Col>
+            </Row>
         </MDBBtnGroup>
+        </center>
         </div>
       </Col>
       </Row>

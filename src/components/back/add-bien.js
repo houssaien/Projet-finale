@@ -105,7 +105,7 @@ class AddBien extends Component {
             </center>
              
              </Form>
-             </Col>
+             </Col> 
         </Row>
              </Container>
 </div>

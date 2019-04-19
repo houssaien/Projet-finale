@@ -87,4 +87,4 @@ const mapDispatchToProps=(dispatch)=>
     }
 }
  
-export default connect(null,mapDispatchToProps)(ItemBien);
+export default connect(null,mapDispatchToProps)(ItemBien); 
