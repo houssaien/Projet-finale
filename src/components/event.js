@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
+import { Container, Row, Col } from 'reactstrap';
+import {connect} from 'react-redux'
+import axios from 'axios'
+import './event.css'
 import {
     Collapse,
     Navbar,
@@ -13,7 +17,9 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
-class Don extends Component {
+
+import ItemEventFront from './itemEvents-front'
+class Events extends Component {
     constructor(props) {
         super(props);
     
@@ -27,18 +33,110 @@ class Don extends Component {
           isOpen: !this.state.isOpen
         });
       }
+      componentDidMount=()=>{
+        axios.get('/get-event').then((res)=>this.props.updateEventReducer(res.data))
+    }
     render() { 
+      const {events}=this.props
         return ( 
             <div>
-       
+               <header class="header-area">
+     
+        
+               
+
+     <Navbar color="white" light expand="md">
+ <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
+ <NavbarToggler onClick={this.toggle} />
+ <Collapse isOpen={this.state.isOpen} navbar>
+   <Nav className="ml-auto" > 
+     <NavItem>
+       <NavLink class="classynav nav caret">
+       <Link to='/' className="active">
+       Acceuil
+   </Link>
+   </NavLink>
+     </NavItem>
+
+     <UncontrolledDropdown nav inNavbar>
+       <DropdownToggle nav caret>
+       <a>
+         Echange
+         </a>
+       </DropdownToggle>
+       <DropdownMenu right>
+         <DropdownItem>
+         <Link to='/Bien'>
+         Echange de bien
+   </Link>
+        
+         </DropdownItem>
+         <DropdownItem>
+         <Link to='/Service'>
+           Echange de service
+           </Link>
+         </DropdownItem>
+         
+       </DropdownMenu>
+     </UncontrolledDropdown>
+     <NavItem>
+       <NavLink>
+       <Link to='/Don'>
+       Don
+   </Link>
+          </NavLink>
+     </NavItem>
+
+     <NavItem>
+           <NavLink>
+           <Link to='/Evenement'>
+           Evements
+   </Link></NavLink>
+     </NavItem>
+
+     <NavItem>
+       <NavLink>
+       <Link to='/Apropos'>
+       A propos de nous
+   </Link></NavLink>
+     </NavItem>
+
+     <NavItem>
+       <NavLink>
+       <Link to='/Contact'>
+       Contact
+   </Link>
+          </NavLink>
+     </NavItem>
+     
+{/* Login / Register */}
+
+<NavItem>
+ <a><Link to='/Identifier'>
+ S'identifier
+   </Link> </a>
+   </NavItem>
+   <NavItem>
+   <span><a><Link to='/Registre'>
+   / Registre
+   </Link></a></span>
+   </NavItem>
+
+
+   </Nav>
+   
+ </Collapse>
+</Navbar>
+
+</header>
        
         <div className="single-welcome-slide">
               {/* Background Curve */}
               <div className="background-curve">
                 <img src="front/img/core-img/curve-1.png"/>
-              </div>
+             
                     
-              
+            </div>  
                     <div class="breadcrumb-area">
         <div class="container h-100">
             <div class="row h-100 align-items-end">
@@ -63,110 +161,29 @@ class Don extends Component {
     
     </div>
                     <section className="uza-about-us-area">
-          <div className="container">
-           
-          </div>
+          
          
-        
+          <div className=" container Liste-event" >
+         
+          {
+             events.map((el,index)=>
+          <ItemEventFront key={index} item={el} num={index} />
+      )} </div> 
+          
+         
+             
         </section>
-
-              <header class="header-area">
-     
-        
-               
-
-              <Navbar color="white" light expand="md">
-          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" > 
-              <NavItem>
-                <NavLink class="classynav nav caret">
-                <Link to='/' className="active">
-                Acceuil
-            </Link>
-            </NavLink>
-              </NavItem>
-
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                <a>
-                  Echange
-                  </a>
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                  <Link to='/Bien'>
-                  Echange de bien
-            </Link>
-                 
-                  </DropdownItem>
-                  <DropdownItem>
-                  <Link to='/Service'>
-                    Echange de service
-                    </Link>
-                  </DropdownItem>
-                  
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink>
-                <Link to='/Don'>
-                Don
-            </Link>
-                   </NavLink>
-              </NavItem>
-
-              <NavItem>
-                    <NavLink>
-                    <Link to='/Evenement'>
-                    Evements
-            </Link></NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink>
-                <Link to='/Apropos'>
-                A propos de nous
-            </Link></NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink>
-                <Link to='/Contact'>
-                Contact
-            </Link>
-                   </NavLink>
-              </NavItem>
-              
-        {/* Login / Register */}
-        
-        <NavItem>
-          <a><Link to='/Identifier'>
-          S'identifier
-            </Link> </a>
-            </NavItem>
-            <NavItem>
-            <span><a><Link to='/Registre'>
-            / Registre
-            </Link></a></span>
-            </NavItem>
-        
-       
-            </Nav>
-            
-          </Collapse>
-        </Navbar>
-        
-        </header>
+</div>
+      
         
         
               {/* Welcome Content */}
             
            
-              </div>
+              
      
-      
+       
+       
         {/* ***** Header Area End ***** */}
 
         
@@ -258,5 +275,23 @@ class Don extends Component {
          );
     }
 }
+const mapStateToProps=(state)=>
+{  return {
+    events:state.reducerevents
+}
+}
+
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+      updateEventReducer:events=>
+        {
+            dispatch({
+                type:'UPDATE_EVENT',
+                events
+            })
+        }
+    }
+}
  
-export default Don;
+export default connect(mapStateToProps,mapDispatchToProps)(Events);

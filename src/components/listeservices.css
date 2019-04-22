@@ -1,5 +1,5 @@
 .liste-service{
     display: flex;
     flex-wrap: wrap;
-    position: static !important;
+    
 }

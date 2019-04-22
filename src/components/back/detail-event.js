@@ -31,7 +31,8 @@ class DetailEvent extends Component {
             title:"",
             description:'',
             imageUrl:'',
-            location:''
+            location:'',
+            date:''
         }
     }
 
@@ -55,7 +56,8 @@ class DetailEvent extends Component {
         description:this.state.description,
         imageUrl:this.state.imageUrl,
         location:this.state.location,
-        confirmation:this.state.confirmation
+        confirmation:this.state.confirmation,
+        date:this.state.date
      }) 
       .then(()=>this.props.detailEventReducer({...this.state})) 
       .catch((err)=>alert(err))
@@ -105,6 +107,15 @@ class DetailEvent extends Component {
 
       <Typography component="p">
       {this.state.location} 
+      </Typography> 
+
+      <br/>
+      <Typography gutterBottom variant="h5" component="h2">
+      Date: 
+      </Typography>
+
+      <Typography component="p">
+      {this.state.date} 
       </Typography> 
 
       <br/>

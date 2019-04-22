@@ -1,0 +1,52 @@
+.Liste-event{
+ 
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.front{
+    display: flex;
+   
+}
+.Faicon{
+    color: gray;
+    size: 23px;
+    padding-right: 12px;
+}
+.titre{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 23px;
+}
+.titre1{
+    color: rgb(80, 77, 77);
+}
+@media only screen and (max-width : 956px) {
+   
+    .front{
+        display: flex;
+        
+        width: 500px !important;
+        height: 310px ;
+       
+       
+    }
+    .back{
+        width: 500px !important;
+        height: 310px ; 
+    }
+    }
+    @media only screen and (max-width : 500px) {
+        .front{
+            display: flex;
+            flex-direction: column;
+            width: 310px !important;
+            height: 340px ;
+           
+           
+           
+        }
+        .back{
+            width: 310px !important;
+            height: 340px ;
+        }
+        }

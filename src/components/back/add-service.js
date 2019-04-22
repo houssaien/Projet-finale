@@ -95,14 +95,11 @@ class AddService extends Component {
              <option>-- Selectionner Catégorie de votre Service --</option>
             <option>Beauté Bien-être</option>
             <option>Travail</option>
-            <option>Maison</option>
             <option>Aide à la personne</option>
             <option>Cours</option>
             <option>Loisirs</option>
             <option>Bricolage</option>
-            <option>Véhicules</option>
-            <option>Vacances</option>
-            <option>Mode</option>
+            <option>Autres</option>
             
             
           </Input>

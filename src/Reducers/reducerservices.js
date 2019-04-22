@@ -40,13 +40,7 @@ case 'UPDATE_SERVICE':
  return (
      state.map(el=>el._id===action.editservice._id? el=action.editservice:el)
  )
- case 'CONFIRM-SERVICE':
- return(
  
-    state.filter(el=>el.confirmation===action.confirmservice.confirmation != "en attente"  ? el=action.confirmservice : null)
-     
-    
- )
 
 default :
 return state

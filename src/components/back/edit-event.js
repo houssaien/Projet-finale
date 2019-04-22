@@ -79,6 +79,14 @@ class EditEvent extends Component {
 
           <Typography component="p">
           <Input type="textarea" name="description"  value={this.state.description} onChange={this.handleChange}/>
+          </Typography>
+          <br/>
+          <Typography gutterBottom variant="h5" component="h2">
+          Date: 
+          </Typography>
+
+          <Typography component="p">
+          <Input type="date" name="date"  value={this.state.date} onChange={this.handleChange}/>
           </Typography> 
 
           <br/>

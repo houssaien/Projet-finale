@@ -3,6 +3,8 @@ import './App.css';
 import { Container, Row, Col } from 'reactstrap'
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+import {connect} from 'react-redux'
 import {
     Collapse,
     Navbar,
@@ -17,7 +19,9 @@ import {
     DropdownItem } from 'reactstrap';
 
 
-import ListeService from './listeservices'
+import ItemService from './itemservices-front'
+import './listeservices.css'
+
 class Service extends Component {
     constructor(props) {
         super(props);
@@ -27,82 +31,32 @@ class Service extends Component {
           isOpen: false
         };
       }
+      componentDidMount=()=>{
+        axios.get('/get-service').then((res)=>this.props.updateServiceReducer(res.data))
+    }
       toggle() {
         this.setState({
           isOpen: !this.state.isOpen
         });
       }
     render() { 
+      const {services}=this.props
         return ( 
             <div>
-       
-       
-        <div className="single-welcome-slide">
-              {/* Background Curve */}
-              <div className="background-curve">
-                <img src="front/img/core-img/curve-1.png" alt/>
-              </div>
-                    
-              
-                    <div class="breadcrumb-area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-end">
-                <div class="col-12">
-                    <div class="breadcumb--con">
-                        <h2 class="title">Echange de Service</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a><Link to='/'>
-                                 <i class="fa fa-home"></i>Acceuil</Link></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><Link to='/Service'>
-                                Echange de Service
-            </Link></li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-       
-        <br/>
-
-
-
-
-<Container>
-          <Row>
-      <Col sm="4">
-      <ListGroup>
-      <ListGroupItem active tag="a"action>Nos Catégories</ListGroupItem>
-      <ListGroupItem tag="a"action>Dapibus ac facilisis in</ListGroupItem>
-      <ListGroupItem tag="a"action>Morbi leo risus</ListGroupItem>
-      <ListGroupItem tag="a"action>Porta ac consectetur ac</ListGroupItem>
-      <ListGroupItem disabled tag="a"action>Vestibulum at eros</ListGroupItem>
-    </ListGroup>
-                  </Col>
-      <Col sm="8">  Nos Services
-      <ListeService/>
-      </Col>
-    </Row>
-          </Container>
-    </div>
-                  
-
-    <header class="header-area">
+       <header class="header-area">
      
         
                
 
 
      <Navbar color="white" light expand="md">
- <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="50px" /></NavbarBrand>
+ <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
  <NavbarToggler onClick={this.toggle} />
  <Collapse isOpen={this.state.isOpen} navbar>
    <Nav className="ml-auto" > 
      <NavItem>
        <NavLink class="classynav nav caret">
-       <Link className="active" to='/'>
+       <Link to='/' className="active">
        Acceuil
    </Link>
    </NavLink>
@@ -116,13 +70,13 @@ class Service extends Component {
        </DropdownToggle>
        <DropdownMenu right>
          <DropdownItem>
-         <Link to='/Bien' className="dropdown-link">
+         <Link to='/Bien'>
          Echange de bien
    </Link>
         
          </DropdownItem>
          <DropdownItem>
-         <Link to='/Service' className="dropdown-link">
+         <Link to='/Service'>
            Echange de service
            </Link>
          </DropdownItem>
@@ -180,25 +134,82 @@ class Service extends Component {
 
 </header>
 
-        
-        
-              {/* Welcome Content */}
-            
-           
+<section>
+       <div>
+       
+        <div className="single-welcome-slide">
+              {/* Background Curve */}
+              <div className="background-curve">
+                <img src="front/img/core-img/curve-1.png" alt/>
               </div>
-     
+                    
+              
+                    <div class="breadcrumb-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-12">
+                    <div class="breadcumb--con">
+        
+                        <h2 class="title">Echange de Service</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a><Link to='/'>
+                                 <i class="fa fa-home"></i>Acceuil</Link></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><Link to='/Service'>
+                                Echange de Service
+            </Link></li>
+                            </ol>
+                        </nav>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                       
+                
+                        <Container>
+          <Row>
+      <Col sm="4">
+      <ListGroup>
+      <ListGroupItem active tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
+      <ListGroupItem tag="a"action>Bricolage</ListGroupItem>
+      <ListGroupItem tag="a"action>Beauté Bien-être</ListGroupItem>
+      <ListGroupItem tag="a"action>Travail</ListGroupItem>
+      <ListGroupItem disabled tag="a"action>Aide à la personne</ListGroupItem>
+      <ListGroupItem tag="a"action>Cours</ListGroupItem>
+      <ListGroupItem tag="a"action>Loisirs</ListGroupItem>
+      <ListGroupItem tag="a"action>Autres</ListGroupItem>
       
-        {/* ***** Header Area End ***** */}
+    </ListGroup>
+                  </Col>
+      <Col sm="8"> 
+      <div className="liste-service">
+      {
+          
+          services.map((el,index)=>
+          
+         
+       <ItemService key={index} item={el} num={index}/>
+     
+   
+   )}  
+   </div>
+      </Col>
+    </Row>
+          </Container>
+   </div>
+          </div>          
+           
+
+       
+        <br/>
+
+
+</section> 
+
 
         
              
-        {/* ***** Welcome Area Start ***** */}
-       
-       
-       
-       
-       
-        {/* ***** Blog Area End ***** */}
      
         <div className="container">
             <div className="border-line" />
@@ -280,4 +291,24 @@ class Service extends Component {
     }
 }
  
-export default Service;
+const mapStateToProps=(state)=>
+{  return {
+    services:state.reducerservices
+}
+}
+
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        updateServiceReducer:services=>
+        {
+            dispatch({
+                type:'UPDATE_SERVICE',
+                services
+            })
+        }
+        
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Service);

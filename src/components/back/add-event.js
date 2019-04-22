@@ -55,7 +55,16 @@ class AddEvent extends Component {
              <br/>
              <Input type="number" name="tel"  onChange={this.handleChange} placeholder="Votre numéro de télephone" required/>
              <br/>
-                
+            
+          <Input
+            type="date"
+            name="date"
+            id="exampleDate"
+            placeholder="date placeholder"
+            onChange={this.handleChange}
+          />  
+          
+          <br/>
              <Input type="file"  name="imageUrl" onChange={this.onImageChange} className="filetype" id="group_image"/>
 <br/>
 

@@ -10,8 +10,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 import Typography from '@material-ui/core/Typography';
-import './event.css'
-class ItemEventFront extends Component {
+
+class ItemBienFront extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -26,76 +26,72 @@ class ItemEventFront extends Component {
 
     deleteBien=()=>
     {  const {item} = this.props
-    axios.delete(`/delete-event/${item._id}`)   
-  .then(()=>this.props.deleteEventReducer(item._id)) 
+    axios.delete(`/delete-bien/${item._id}`)   
+  .then(()=>this.props.deleteBienReducer(item._id)) 
   .catch((err)=>alert(err)) 
     }
     render() { 
-      const {item}=this.props
+      const {item,num}=this.props
 
   return (
     <div>
     {item.confirmation === "confirme"?
  
-
 <Flippy
     flipOnHover={false} // default false
     flipOnClick={true} // default false
-    flipDirection="vertical" // horizontal or vertical
+    flipDirection="horizontal" // horizontal or vertical
     ref={(r) => this.flippy = r} // to use toggle method like this.flippy.toggle()
     // if you pass isFlipped prop component will be controlled component.
     // and other props, which will go to div
     /// these are optional style, it is not necessary
-    style={{ width: '800px', height: '210px',margin:'34px'}} 
+    style={{ width: '310px', height: '340px', margin:'10px' }} 
  >
-    <FrontSide className="front">
-      <CardActionArea style={{ width: '230px', height: '170px'}} >
+    <FrontSide>
+      <CardActionArea>
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
         
-          img id="target" src={item.imageUrl}    
+          img id="target" src={item.imageUrl}    width="60px" height="60px"
           title="Contemplative Reptile"
-          style={{ width: '230px', height: '170px'}} 
         />
       </CardActionArea>
-      <CardContent style={{ paddingLeft: '50px'}} >
+      <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-         <div className="titre1"> {item.title}</div>
-          <br/>
-          
-         <div className="titre"> Date et lieu:</div>
-          <Typography component="p">
-          <i class="far fa-calendar-alt Faicon"></i>{item.date}
-          <br/>
-          <i class="fas fa-map-marker-alt Faicon"></i>   {item.location} 
-          </Typography>
+          {item.title}
           </Typography>
         
           </CardContent>
     </FrontSide>
-    <BackSide className="back"
+    <BackSide
    >
         <CardContent>
        
           <Typography gutterBottom variant="h5" component="h2">
-          
+          Description: 
           </Typography>
 
           <Typography component="p">
         <p>  {item.description}</p>
           </Typography> 
 
-          
-         
-
           <br/>
           <Typography gutterBottom variant="h5" component="h2">
-         
+          Lieu: 
           </Typography>
 
           <Typography component="p">
-          {/* {item.Categbien}  */}
+          {item.location} 
+          </Typography> 
+
+          <br/>
+          <Typography gutterBottom variant="h5" component="h2">
+          Catégorie: 
+          </Typography>
+
+          <Typography component="p">
+          {item.Categbien} 
           </Typography> 
 
 
@@ -111,14 +107,14 @@ class ItemEventFront extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        deleteEventReducer:_id=>
+        deleteBienReducer:_id=>
         {
             dispatch({
-                type:'REMOVE_EVENT',
+                type:'REMOVE_BIEN',
                 _id
             })
         }
     }
 }
  
-export default connect(null,mapDispatchToProps)(ItemEventFront); 
+export default connect(null,mapDispatchToProps)(ItemBienFront); 
