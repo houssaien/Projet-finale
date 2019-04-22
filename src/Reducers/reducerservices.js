@@ -5,6 +5,7 @@ let services=[
     description:' baby citting',
     date: '23/02/2019',
     location: 'tunisia',
+    confirmation:'en attente',
     imageUrl: "images/uploads/1555072448028-dcn4e38-44bbf8a1-1592-4014-b4de-c04f663c1c74.png"
 },
 {
@@ -12,6 +13,7 @@ let services=[
     description:"jardin d'une villa",
     date: '23/12/2019',
     location: 'sousse',
+    confirmation:'confirme',
     imageUrl: "images/uploads/1555072448028-dcn4e38-44bbf8a1-1592-4014-b4de-c04f663c1c74.png"}
 ]
 
@@ -37,6 +39,13 @@ case 'UPDATE_SERVICE':
  case 'DETAIL_SERVICE':
  return (
      state.map(el=>el._id===action.editservice._id? el=action.editservice:el)
+ )
+ case 'CONFIRM-SERVICE':
+ return(
+ 
+    state.filter(el=>el.confirmation===action.confirmservice.confirmation != "en attente"  ? el=action.confirmservice : null)
+     
+    
  )
 
 default :

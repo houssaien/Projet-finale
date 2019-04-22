@@ -15,7 +15,10 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
-class Don extends Component {
+
+
+import ListeService from './listeservices'
+class Service extends Component {
     constructor(props) {
         super(props);
     
@@ -78,100 +81,105 @@ class Don extends Component {
       <ListGroupItem disabled tag="a"action>Vestibulum at eros</ListGroupItem>
     </ListGroup>
                   </Col>
-      <Col sm="8">  Nos Services</Col>
+      <Col sm="8">  Nos Services
+      <ListeService/>
+      </Col>
     </Row>
           </Container>
     </div>
                   
 
-              <header class="header-area">
+    <header class="header-area">
      
         
                
 
 
-              <Navbar color="faded" light expand="md">
-          <NavbarBrand><img src="front/img/core-img/logof.png" width="200px" height="150px" /></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" > 
-              <NavItem>
-                <NavLink class="classynav nav caret">
-                <Link to='/'>
-                Acceuil
-            </Link>
-            </NavLink>
-              </NavItem>
+     <Navbar color="white" light expand="md">
+ <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="50px" /></NavbarBrand>
+ <NavbarToggler onClick={this.toggle} />
+ <Collapse isOpen={this.state.isOpen} navbar>
+   <Nav className="ml-auto" > 
+     <NavItem>
+       <NavLink class="classynav nav caret">
+       <Link className="active" to='/'>
+       Acceuil
+   </Link>
+   </NavLink>
+     </NavItem>
 
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                <a>
-                  Echange
-                  </a>
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                  <Link to='/Bien'>
-                  Echange de bien
-            </Link>
-                 
-                  </DropdownItem>
-                  <DropdownItem>
-                  <Link to='/Service'>
-                    Echange de service
-                    </Link>
-                  </DropdownItem>
-                  
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink>
-                <Link to='/Don'>
-                Don
-            </Link>
-                   </NavLink>
-              </NavItem>
-
-              <NavItem>
-                    <NavLink>
-                    <Link to='/Evenement'>
-                    Evements
-            </Link></NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink>
-                <Link to='/Apropos'>
-                A propos de nous
-            </Link></NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink>
-                <Link to='/Contact'>
-                Contact
-            </Link>
-                   </NavLink>
-              </NavItem>
-              
-        {/* Login / Register */}
-        <div className="login-register-btn mx-3">
-          <a><Link to='/Identifier'>
-          S'identifier
-            </Link> </a><span><a><Link to='/Registre'>
-            / Registre
-            </Link></a></span>
-        </div>
-        <NavItem>
-            <br/>
+     <UncontrolledDropdown nav inNavbar>
+       <DropdownToggle nav caret>
+       <a>
+         Echange
+         </a>
+       </DropdownToggle>
+       <DropdownMenu right>
+         <DropdownItem>
+         <Link to='/Bien' className="dropdown-link">
+         Echange de bien
+   </Link>
         
-      </NavItem>
-            </Nav>
-            
-          </Collapse>
-        </Navbar>
-        
-        </header>
+         </DropdownItem>
+         <DropdownItem>
+         <Link to='/Service' className="dropdown-link">
+           Echange de service
+           </Link>
+         </DropdownItem>
+         
+       </DropdownMenu>
+     </UncontrolledDropdown>
+     <NavItem>
+       <NavLink>
+       <Link to='/Don'>
+       Don
+   </Link>
+          </NavLink>
+     </NavItem>
+
+     <NavItem>
+           <NavLink>
+           <Link to='/Evenement'>
+           Evements
+   </Link></NavLink>
+     </NavItem>
+
+     <NavItem>
+       <NavLink>
+       <Link to='/Apropos'>
+       A propos de nous
+   </Link></NavLink>
+     </NavItem>
+
+     <NavItem>
+       <NavLink>
+       <Link to='/Contact'>
+       Contact
+   </Link>
+          </NavLink>
+     </NavItem>
+     
+{/* Login / Register */}
+
+<NavItem>
+ <a><Link to='/Identifier'>
+ S'identifier
+   </Link> </a>
+   </NavItem>
+   <NavItem>
+   <span><a><Link to='/Registre'>
+   / Registre
+   </Link></a></span>
+   </NavItem>
+
+
+   </Nav>
+   
+ </Collapse>
+</Navbar>
+
+</header>
+
         
         
               {/* Welcome Content */}
@@ -272,4 +280,4 @@ class Don extends Component {
     }
 }
  
-export default Don;
+export default Service;

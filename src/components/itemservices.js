@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
-
 class Itemservices  extends Component {
   render(){ 
     const {item}=this.props

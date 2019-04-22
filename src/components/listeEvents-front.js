@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import axios from 'axios'
 
-import Itemservices from './itemservices'
+import ItemEvents from './itemEvents-front'
 import './listeservices.css'
 
-class ListServices extends Component {
+class ListEvents extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     componentDidMount=()=>{
-        axios.get('/get-service').then((res)=>this.props.updateServiceReducer(res.data))
+        axios.get('/get-event').then((res)=>this.props.updateEventReducer(res.data))
     }
     render() { 
-        const {services}=this.props
+        const {events}=this.props
         return ( 
             
       
         <div className='liste-service'>
         {
-            services.map((el,index)=><Itemservices item={el} key={index} id={index}/>)
+            events.map((el,index)=><ItemEvents item={el} key={index} id={index}/>)
         }
          </div>         
           
@@ -30,21 +30,21 @@ class ListServices extends Component {
 
 const mapStateToProps=(state)=>
 {  return {
-    services:state.reducerservices
+    events:state.reducerevents
 }
 }
 
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-      updateServiceReducer:confirmservice=>
+      updateEventReducer:events=>
         {
             dispatch({
-                type:'CONFIRM_SERVICE',
-                confirmservice
+                type:'UPDATE_EVENT',
+                events
             })
         }
     }
 }
  
-export default connect(mapStateToProps,mapDispatchToProps)(ListServices);
+export default connect(mapStateToProps,mapDispatchToProps)(ListEvents);
