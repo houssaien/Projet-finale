@@ -35,7 +35,7 @@ class ItemBienFront extends Component {
 
   return (
     <div>
-    {item.confirmation === "confirme"?
+    {item.confirmation === "confirme" && item.Categbien === "Immobilier"?
  
 <Flippy
     flipOnHover={false} // default false
@@ -51,7 +51,7 @@ class ItemBienFront extends Component {
       <CardActionArea>
         <CardMedia
           component="img"
-         style={{ width:"350px",height:"265px"}}
+         
         
           img id="target" src={item.imageUrl}   
           title="Contemplative Reptile"
@@ -108,11 +108,11 @@ class ItemBienFront extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        deleteBienReducer:Categbien=>
+        deleteBienReducer:_id=>
         {
             dispatch({
-                type:'IMMO_BIEN',
-                Categbien
+                type:'REMOVE_BIEN',
+                _id
             })
         }
     }

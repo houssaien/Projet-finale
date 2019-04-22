@@ -13,21 +13,32 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+    import ItemDon from './item-don-front'
+    import axios from 'axios'
+      import {connect} from 'react-redux'
 class Don extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props)
+  {
     
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-          isOpen: false
-        };
+      super(props)
+      this.state={
+        activePage: 1
       }
+  }
+  componentDidMount=()=>{
+      axios.get('/get-dons').then((res)=>this.props.updateDonReducer(res.data))
+  }
+  
+  
+
+  
       toggle() {
         this.setState({
           isOpen: !this.state.isOpen
         });
       }
     render() { 
+      const {dons}=this.props
         return ( 
             <div>
        
@@ -56,6 +67,11 @@ class Don extends Component {
                         </nav>
                     </div>
                 </div>
+
+                <div class="col-12">   {
+               dons.map((el,index)=>
+            <ItemDon key={index} item={el} num={index}/>
+        )}  </div>
             </div>
         </div>
 
@@ -173,7 +189,7 @@ class Don extends Component {
              
         {/* ***** Welcome Area Start ***** */}
        
-       
+     
        
        
        
@@ -259,4 +275,26 @@ class Don extends Component {
     }
 }
  
-export default Don;
+
+const mapStateToProps=(state)=>
+{  return {
+    dons:state.reducersdons
+}
+}
+
+const mapDispatchToProps=(dispatch)=>
+{
+    return {
+        updateDonReducer:dons=>
+        {
+            dispatch({
+                type:'UPDATE_DON',
+                dons
+            })
+        }
+        
+    }
+}
+
+ 
+export default connect(mapStateToProps,mapDispatchToProps)(Don);

@@ -23,10 +23,13 @@
 .navbar a:hover {
  color: #1583e9;
 }
-
+.immm{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .first_title{
-  margin-top: 50px
+  margin-top: 50px 
 }
 
 .im2{

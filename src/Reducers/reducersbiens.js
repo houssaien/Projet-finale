@@ -16,13 +16,18 @@ let biens=[
 }
 ]
 
-const reducersbiens=(state=biens,action)=>
+const reducersbiens=(state=biens,action,Categbien)=>
 {
   switch(action.type)
   {
       case 'ADD_BIEN' :
       return (
           state.concat(action.newbien)
+      )
+
+      case 'IMMO_BIEN':
+      return (
+          state.filter(el=>el.Categbien==action.Categbien)
       )
 
       case 'EDIT_BIEN':

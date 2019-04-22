@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import axios from 'axios'
-import { Container, Row, Col, CardText } from 'reactstrap';
+import  { Fragment } from "react";
+import { Container, Row, Col } from 'reactstrap';
+import { Button, Table } from 'reactstrap';
+import {Link} from 'react-router-dom'
+import { CardText } from 'reactstrap';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-
+import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 
 import CardContent from '@material-ui/core/CardContent';
@@ -11,30 +15,24 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import Typography from '@material-ui/core/Typography';
 
-class ItemBienFront extends Component {
+
+class ItemDonFront extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-          isFlipped: false
-         }
-         this.handleClick = this.handleClick.bind(this);
-    }
-    handleClick(e) {
-      e.preventDefault();
-      this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+        this.state = {  }
     }
 
-    deleteBien=()=>
+    deleteDon=()=>
     {  const {item} = this.props
-    axios.delete(`/delete-bien/${item._id}`)   
-  .then(()=>this.props.deleteBienReducer(item._id)) 
+    axios.delete(`/delete-dons/${item._id}`)   
+  .then(()=>this.props.deleteDonReducer(item._id)) 
   .catch((err)=>alert(err)) 
     }
-    render() { 
+    render() {  
       const {item,num}=this.props
 
   return (
-    <div>
+<div>
     {item.confirmation === "confirme"?
  
 <Flippy
@@ -51,7 +49,7 @@ class ItemBienFront extends Component {
       <CardActionArea>
         <CardMedia
           component="img"
-         style={{ width:"350px",height:"265px"}}
+         
         
           img id="target" src={item.imageUrl}   
           title="Contemplative Reptile"
@@ -108,14 +106,14 @@ class ItemBienFront extends Component {
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        deleteBienReducer:Categbien=>
+        deleteDonReducer:_id=>
         {
             dispatch({
-                type:'IMMO_BIEN',
-                Categbien
+                type:'REMOVE_DON',
+                _id
             })
         }
     }
 }
  
-export default connect(null,mapDispatchToProps)(ItemBienFront); 
+export default connect(null,mapDispatchToProps)(ItemDonFront);

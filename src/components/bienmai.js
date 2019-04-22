@@ -18,12 +18,12 @@ import {
 
 
     import {connect} from 'react-redux'
-    import BienItem from './item-bien-front'
+    import BienItem from './item-bien-mai'
     import Footer from './footer'
 
 import axios from 'axios'
 
-class Bien extends Component {
+class Bienmai extends Component {
     constructor(props) {
         super(props);
     
@@ -188,21 +188,21 @@ class Bien extends Component {
         </div>
     </div>
               <Row>
-          <Col xs="12" sm="4">
+          <Col sm="4">
           <ListGroup>
           <ListGroupItem active tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
-          <ListGroupItem tag="a"action><Link to='/Bien_Immobilier'>Immobilier</Link></ListGroupItem>   
+          <ListGroupItem tag="a"action><Link to='/Bien_Immobilier'>Immobilier</Link></ListGroupItem>
           <ListGroupItem tag="a"action><Link to='/Bien_Véhicules'>Véhicules</Link></ListGroupItem>   
-          <ListGroupItem tag="a"action><Link to='/Bien_Maison'>Pour la Maison et Jardin</Link></ListGroupItem>
+          <ListGroupItem tag="a"action>Pour la Maison et Jardin</ListGroupItem>
           <ListGroupItem tag="a"action>Loisirs et Divertissement</ListGroupItem>
           <ListGroupItem tag="a"action>Informatique et Multimedia</ListGroupItem>
           <ListGroupItem tag="a"action>Habillement et Bien Etre</ListGroupItem>
           <ListGroupItem tag="a"action>Autres</ListGroupItem>
         </ListGroup>
-         </Col>
-        <Col xs="8" >
+         
+                      </Col>
                           
-                  <div className="immm"> 
+         
           {
           
                biens.map((el,index)=>
@@ -211,8 +211,8 @@ class Bien extends Component {
             <BienItem key={index} item={el} num={index}/>
           
         
-        )}    </div>  
-          </Col>
+        )}  
+ 
         </Row>
               </Container>
 
@@ -268,4 +268,4 @@ const mapDispatchToProps=(dispatch)=>
 }
 
  
-export default connect(mapStateToProps,mapDispatchToProps)(Bien);
+export default connect(mapStateToProps,mapDispatchToProps)(Bienmai);
