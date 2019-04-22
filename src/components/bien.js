@@ -194,13 +194,13 @@ class Bien extends Component {
           <ListGroupItem tag="a"action><Link to='/Bien_Immobilier'>Immobilier</Link></ListGroupItem>   
           <ListGroupItem tag="a"action><Link to='/Bien_Véhicules'>Véhicules</Link></ListGroupItem>   
           <ListGroupItem tag="a"action><Link to='/Bien_Maison'>Pour la Maison et Jardin</Link></ListGroupItem>
-          <ListGroupItem tag="a"action>Loisirs et Divertissement</ListGroupItem>
-          <ListGroupItem tag="a"action>Informatique et Multimedia</ListGroupItem>
-          <ListGroupItem tag="a"action>Habillement et Bien Etre</ListGroupItem>
-          <ListGroupItem tag="a"action>Autres</ListGroupItem>
-        </ListGroup>
+          <ListGroupItem tag="a"action><Link to='/Bien_Loisir'>Loisirs et Divertissement</Link></ListGroupItem>
+          <ListGroupItem tag="a"action><Link to='/Bien_Informatique'>Informatique et Multimedia</Link></ListGroupItem>
+          <ListGroupItem tag="a"action><Link to='/Bien_Habillement'>Habillement et Bien Etre</Link></ListGroupItem> 
+          <ListGroupItem tag="a"action><Link to='/Bien_Autre'>Autres</Link></ListGroupItem>  
+        </ListGroup> 
          </Col>
-        <Col xs="8" >
+        <Col xs="8" >   
                           
                   <div className="immm"> 
           {

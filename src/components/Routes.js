@@ -15,7 +15,7 @@ import Mondonation from './mondonation'
 import Monprofil from './monprofil'
 import Bienimmo from './bienimmo'
 import Bienveh from './bienveh'
-
+import Bienhabi from './bienhabi'
 
 
 import DetailBien from './back/detail-bien';
@@ -41,7 +41,10 @@ import  DetailDon from './back/detail-don'
 import AddEvent from './back/add-event'
 import EditEvent from './back/edit-event'
 import DetailEvent from './back/detail-event'
-import bienmai from './bienmai';
+import bienmai from './bienmai'
+import bienloi from './bienloi'
+import bieninfo from './bieninfo'
+import bienautre from './bienautre'
 
 class Routes extends Component {
     render() { 
@@ -64,7 +67,12 @@ class Routes extends Component {
              <Route exact path='/Bien_Immobilier' component={Bienimmo}/>
              <Route exact path='/Bien_Véhicules' component={Bienveh}/>
              <Route exact path='/Bien_Maison' component={bienmai}/>
-          
+             <Route exact path='/Bien_Loisir' component={bienloi}/> 
+             <Route exact path='/Bien_Informatique' component={bieninfo}/>
+             <Route exact path='/Bien_Habillement' component={Bienhabi}/>
+             <Route exact path='/Bien_Autre' component={bienautre}/>
+
+             
              <Route exact path="/editbien/:_id" 
              render={props=><EditBien _id={props.match.params._id}/>}/>
 
