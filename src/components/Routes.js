@@ -43,6 +43,13 @@ import EditEvent from './back/edit-event'
 import DetailEvent from './back/detail-event'
 import bienmai from './bienmai';
 
+import ServiceBrico from './seviceBrico'
+import ServiceBeaute from './serviceBeute'
+import ServiceTra from './servicetra'
+import ServiceAide from './serviceaide'
+import ServiceCour from './serviceCours'
+import ServiceLoisirs from './serviceLoisirs'
+
 class Routes extends Component {
     render() { 
         return ( 
@@ -64,6 +71,16 @@ class Routes extends Component {
              <Route exact path='/Bien_Immobilier' component={Bienimmo}/>
              <Route exact path='/Bien_Véhicules' component={Bienveh}/>
              <Route exact path='/Bien_Maison' component={bienmai}/>
+
+
+             <Route exact path='/Service_Bricolage' component={ServiceBrico}/>
+             <Route exact path='/Service_Beaute' component={ServiceBeaute}/>
+             <Route exact path='/Service_Travail' component={ServiceTra}/>
+             <Route exact path='/Service_Aide' component={ServiceAide}/>
+             <Route exact path='/Service_Cours' component={ServiceCour}/>
+             <Route exact path='/Service_Loisirs' component={ServiceLoisirs}/>
+
+
           
              <Route exact path="/editbien/:_id" 
              render={props=><EditBien _id={props.match.params._id}/>}/>

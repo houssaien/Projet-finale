@@ -31,7 +31,7 @@ class ItemService extends Component {
         <th className='col-lg-2'>{item.title}</th>
         
       
-        <th className='col-lg-2'>{item.Categservice}</th>                            
+        <th className='col-lg-2'>{item.categservice}</th>                            
         <th className='col-lg-2'>{item.confirmation === "en attente"?
           
           <Button color="danger" size="sm" outline>

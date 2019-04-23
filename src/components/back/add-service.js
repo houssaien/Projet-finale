@@ -91,7 +91,7 @@ class AddService extends Component {
           </Input>
           <br/>
 
-          <Input type="select" name="Categservice" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
+          <Input type="select" name="categservice" onChange={this.handleChange} placeholder="Selectionner votre gouvernorat" required>
              <option>-- Selectionner Catégorie de votre Service --</option>
             <option>Beauté Bien-être</option>
             <option>Travail</option>

@@ -42,7 +42,7 @@ class EditService extends Component {
         imageUrl:this.state.imageUrl,
         location:this.state.location,
         confirmation:this.state.confirmation,
-        Categservice:this.state.Categservice,
+        categservice:this.state.categservice,
      }) 
       .then(()=>this.props.editServiceReducer({...this.state})) 
       .catch((err)=>alert(err))
@@ -116,18 +116,17 @@ class EditService extends Component {
 
              Categservice :
              {/* <input  type='text' name='location' value={this.state.location} onChange={this.handleChange}/> */}
-             <Input type="select" name="Categservice" value={this.state.Categservice} onChange={this.handleChange} required>
+             <Input type="select" name="categservice" value={this.state.categservice} onChange={this.handleChange} required>
              <option>{this.state.Categservice}</option>
              <option>Beauté Bien-être</option>
             <option>Travail</option>
-            <option>Maison</option>
+            
             <option>Aide à la personne</option>
             <option>Cours</option>
             <option>Loisirs</option>
             <option>Bricolage</option>
-            <option>Véhicules</option>
-            <option>Vacances</option>
-            <option>Mode</option>
+            
+            <option>Autres</option>
             </Input>
 
 

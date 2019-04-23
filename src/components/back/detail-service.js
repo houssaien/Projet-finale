@@ -21,7 +21,7 @@ class DetailService extends Component {
             imageUrl:'',
             location:'',
             confirmation:'en attente',
-            Categservice:''
+            categservice:''
         }
     }
 
@@ -46,7 +46,7 @@ class DetailService extends Component {
         imageUrl:this.state.imageUrl,
         location:this.state.location,
         confirmation:this.state.confirmation,
-        Categservice:this.state.Categservice
+        categservice:this.state.categservice
      }) 
       .then(()=>this.props.detailServiceReducer({...this.state})) 
       .catch((err)=>alert(err))
@@ -112,7 +112,7 @@ class DetailService extends Component {
       </Typography>
 
       <Typography component="p">
-      {this.state.Categservice} 
+      {this.state.categservice} 
       </Typography> 
 
 

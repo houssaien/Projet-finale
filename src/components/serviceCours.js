@@ -18,12 +18,12 @@ import {
 
 
     import {connect} from 'react-redux'
-    import ItemServic from './itemservices-front'
+    import ItemServic from './item-service-cour'
     import Footer from './footer'
 
 import axios from 'axios'
 
-class Service extends Component {
+class ServiceCour extends Component {
     constructor(props) {
         super(props);
     
@@ -270,4 +270,4 @@ const mapDispatchToProps=(dispatch)=>
 }
 
  
-export default connect(mapStateToProps,mapDispatchToProps)(Service);
+export default connect(mapStateToProps,mapDispatchToProps)(ServiceCour);
