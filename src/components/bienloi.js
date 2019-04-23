@@ -18,12 +18,12 @@ import {
 
 
     import {connect} from 'react-redux'
-    import BienItem from './item-bien-veh'
+    import BienItem from './item-bien-loisir'
     import Footer from './footer'
 
 import axios from 'axios'
 
-class Bienveh extends Component {
+class Bienloi extends Component {
     constructor(props) {
         super(props);
     
@@ -203,7 +203,7 @@ class Bienveh extends Component {
                       </Col>
                       <Col xs="8" >   
                           
-                          <div className="immm">  
+                          <div className="immm">   
          
           {
           
@@ -214,7 +214,7 @@ class Bienveh extends Component {
           
         
         )}  
-                </div></Col>
+ </div></Col>
         </Row>
               </Container>
 
@@ -270,4 +270,4 @@ const mapDispatchToProps=(dispatch)=>
 }
 
  
-export default connect(mapStateToProps,mapDispatchToProps)(Bienveh);
+export default connect(mapStateToProps,mapDispatchToProps)(Bienloi);
