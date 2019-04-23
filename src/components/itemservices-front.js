@@ -35,7 +35,7 @@ class ItemService extends Component {
 
   return (
     <div>
-    {item.confirmation === "confirme"?
+    {item.confirmation === "confirme" ?
  
 <Flippy
     flipOnHover={false} // default false

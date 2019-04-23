@@ -3,6 +3,7 @@ import './App.css';
 import { Container, Row, Col } from 'reactstrap'
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import {Link} from 'react-router-dom'
+import { MDBCol, MDBIcon } from "mdbreact";
 import {
     Collapse,
     Navbar,
@@ -18,7 +19,7 @@ import {
 
 
     import {connect} from 'react-redux'
-    import ItemServic from './itemservices-front'
+    import ItemService from './itemservices-front'
     import Footer from './footer'
 
 import axios from 'axios'
@@ -30,7 +31,8 @@ class Service extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
           isOpen: false,
-          activePage: 1
+          activePage: 1,
+          keyword:''
         };
       }
     
@@ -39,6 +41,14 @@ class Service extends Component {
           axios.get('/get-service').then((res)=>this.props.updateServiceReducer(res.data))
       }
       
+      handle_search  = (event) =>
+      {
+          
+     
+         this.setState({keyword:event.target.value}, ()=> this.props.search(this.state.keyword))
+        
+
+      }
     
     
       toggle() {
@@ -48,6 +58,7 @@ class Service extends Component {
       }
     render() { 
       const {services}=this.props
+      console.log(services)
         return ( 
             <div>
               
@@ -179,7 +190,7 @@ class Service extends Component {
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a><Link to='/'>
                              <i class="fa fa-home"></i>Acceuil</Link></a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><Link to='/Bien'>
+                            <li class="breadcrumb-item active" aria-current="page"><Link to='/Service'>
                             Echange de Service
         </Link></li>
                         </ol>
@@ -191,6 +202,11 @@ class Service extends Component {
     </div>
               <Row>
           <Col xs="12" sm="4">
+          <div>
+ 
+
+      
+      </div>
           <ListGroup>
           <ListGroupItem active tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
       <ListGroupItem tag="a"action> <Link to='/Service_Bricolage'>Bricolage</Link></ListGroupItem>
@@ -203,14 +219,25 @@ class Service extends Component {
         </ListGroup>
          </Col>
         <Col xs="8" >
+        <MDBCol >
+       <form className="form-inline mt-4 mb-4">
+         <MDBIcon icon="search" />
+         <input className="form-control form-control-sm ml-3 w-75" 
+                type="text"
+                placeholder="Search" 
+                aria-label="Search" 
+                value={this.state.keyword}
+                onChange={this.handle_search}/>
+    </form>
+    </MDBCol>
                           
                   <div className="immm"> 
           {
           
-               services.map((el,index)=>
+          (services).map((el,index)=>
                
               
-            <ItemServic key={index} item={el} num={index}/>
+            <ItemService key={index} item={el} num={index}/>
           
         
         )}    </div>  
@@ -258,7 +285,15 @@ const mapStateToProps=(state)=>
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-        updateBienReducer:services=>
+      search: (keyword) =>
+    {
+        dispatch({
+            type : 'SEARCH-SERVICE',
+            keyword,
+            
+        })
+    },
+    updateServiceReducer:services=>
         {
             dispatch({
                 type:'UPDATE_SERVICE',
