@@ -20,7 +20,7 @@ import {
     import {connect} from 'react-redux'
     import BienItem from './item-bien-front'
     import Footer from './footer'
-
+    import { MDBCol, MDBIcon } from "mdbreact";
 import axios from 'axios'
 
 class Bien extends Component {
@@ -30,11 +30,19 @@ class Bien extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
           isOpen: false,
-          activePage: 1
+          activePage: 1,
+        
+          // keyword:''
         };
       }
     
-    
+      handle_search=(event) =>
+      {
+          
+     
+         this.setState({keyword:event.target.value},()=>this.props.search(this.state.keyword))
+        
+    }
       componentDidMount=()=>{
           axios.get('/get-biens').then((res)=>this.props.updateBienReducer(res.data))
       }
@@ -166,12 +174,13 @@ class Bien extends Component {
    
 
     <Container>
+    <div class="breadcrumb-area">
     <div class="container h-100">
         
         <div class="row h-100 align-items-end">
             <div class="col-12">
                 <div class="breadcumb--con">
-                
+                <h2 class="title">Echange de Bien</h2>
                     
                     <br/>
                     <nav aria-label="breadcrumb">
@@ -183,9 +192,12 @@ class Bien extends Component {
         </Link></li>
                         </ol>
                     </nav>
+
+                    
                 </div>
             </div>
         </div>
+    </div>
     </div>
               <Row>
           <Col xs="12" sm="4">
@@ -201,7 +213,15 @@ class Bien extends Component {
         </ListGroup> 
          </Col>
         <Col xs="8" >   
-                          
+        <form className="form-inline mt-4 mb-4">
+         <MDBIcon icon="search" />
+         <input className="form-control form-control-sm ml-3 w-75" 
+                type="text"
+                placeholder="Chercher Bien" 
+                aria-label="Search" 
+                value={this.state.keyword}
+                onChange={this.handle_search}/>
+</form>
                   <div className="immm"> 
           {
           
@@ -256,6 +276,14 @@ const mapStateToProps=(state)=>
 const mapDispatchToProps=(dispatch)=>
 {
     return {
+      search: (keyword,biens) =>
+      {
+          dispatch({
+              type : 'SEARCH_BIEN',
+              keyword,
+              biens
+          })
+  },
         updateBienReducer:biens=>
         {
             dispatch({

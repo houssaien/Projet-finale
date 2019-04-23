@@ -5,9 +5,13 @@ const assert=require('assert')
 const multer= require('multer')
 const mongoose = require('mongoose')
 const cors =require('cors')
-
 const app=express()
+const passport = require("passport");
 
+const users = require("./routes/api/users");
+
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 const MongoUrl='mongodb://localhost:27017'
 const database='badeli'
@@ -37,7 +41,24 @@ app
     else res.status("409").json("No Files to Upload.")
   })
 
+  const db = require("./config/keys").mongoURI;
 
+  // Connectiong to MongoDB Mlab
+  mongoose.Promise = global.Promise;
+  mongoose
+    .connect(db)
+    .then(() => console.log("mongodb connected"))
+    .catch(err => console.log(err));
+  
+  
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
+
+// Routes
+app.use("/api/users", users);
 
 MongoClient.connect(MongoUrl,{useNewUrlParser:true},(err,client)=>{
     assert.equal(null,err,'can not connect to database')
