@@ -24,7 +24,10 @@ const reducersdons=(state=dons,action)=>
       return (
           state.concat(action.newdon)
       )
-
+      case 'SEARCH_Don' : 
+      return (
+        action.dons.filter(el => el.title.toLowerCase().indexOf(action.keyword)>-1)
+)
       case 'EDIT_DON':
       return (
           state.map(el=>el._id===action.editdon._id? el=action.editdon:el)

@@ -70,12 +70,13 @@ class Bienveh extends Component {
    
 
     <Container>
+    <div class="breadcrumb-area">
     <div class="container h-100">
         
         <div class="row h-100 align-items-end">
             <div class="col-12">
                 <div class="breadcumb--con">
-                
+                <h2 class="title">Echange de Bien</h2>
                     
                     <br/>
                     <nav aria-label="breadcrumb">
@@ -85,16 +86,22 @@ class Bienveh extends Component {
                             <li class="breadcrumb-item active" aria-current="page"><Link to='/Bien'>
                             Echange de Bien
         </Link></li>
+        <li class="breadcrumb-item " aria-current="page">
+        Véhicules
+        </li>
                         </ol>
                     </nav>
+
+                    
                 </div>
             </div>
         </div>
     </div>
+    </div>
               <Row>
           <Col sm="4">
           <ListGroup>
-          <ListGroupItem active tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
+          <ListGroupItem className="categ" tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
           <ListGroupItem tag="a"action><Link to='/Bien_Immobilier'>Immobilier</Link></ListGroupItem>   
           <ListGroupItem tag="a"action><Link to='/Bien_Véhicules'>Véhicules</Link></ListGroupItem>   
           <ListGroupItem tag="a"action><Link to='/Bien_Maison'>Pour la Maison et Jardin</Link></ListGroupItem>
