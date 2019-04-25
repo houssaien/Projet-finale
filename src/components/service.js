@@ -4,18 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import { MDBCol, MDBIcon } from "mdbreact";
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+import NavbarPage from './navbarPage'
 
 
     import {connect} from 'react-redux'
@@ -45,7 +34,7 @@ class Service extends Component {
       {
           
      
-         this.setState({keyword:event.target.value}, ()=> this.props.search(this.state.keyword))
+         this.setState({keyword:event.target.value}, ()=> this.props.search(this.props.services,this.state.keyword))
         
 
       }
@@ -67,93 +56,7 @@ class Service extends Component {
               
 
                <header class="header-area">
-     
-        
-               
-
-
-     <Navbar color="white" light expand="md">
- <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
- <NavbarToggler onClick={this.toggle} />
- <Collapse isOpen={this.state.isOpen} navbar>
-   <Nav className="ml-auto" > 
-     <NavItem>
-       <NavLink class="classynav nav caret">
-       <Link to='/' className="active">
-       Acceuil
-   </Link>
-   </NavLink>
-     </NavItem>
-
-     <UncontrolledDropdown nav inNavbar>
-       <DropdownToggle nav caret>
-       <a>
-         Echange
-         </a>
-       </DropdownToggle>
-       <DropdownMenu right>
-         <DropdownItem>
-         <Link to='/Bien'>
-         Echange de bien
-   </Link>
-        
-         </DropdownItem>
-         <DropdownItem>
-         <Link to='/Service'>
-           Echange de service
-           </Link>
-         </DropdownItem>
-         
-       </DropdownMenu>
-     </UncontrolledDropdown>
-     <NavItem>
-       <NavLink>
-       <Link to='/Don'>
-       Don
-   </Link>
-          </NavLink>
-     </NavItem>
-
-     <NavItem>
-           <NavLink>
-           <Link to='/Evenement'>
-           Evements
-   </Link></NavLink>
-     </NavItem>
-
-     <NavItem>
-       <NavLink>
-       <Link to='/Apropos'>
-       A propos de nous
-   </Link></NavLink>
-     </NavItem>
-
-     <NavItem>
-       <NavLink>
-       <Link to='/Contact'>
-       Contact
-   </Link>
-          </NavLink>
-     </NavItem>
-     
-{/* Login / Register */}
-
-<NavItem>
- <a><Link to='/Identifier'>
- S'identifier
-   </Link> </a>
-   </NavItem>
-   <NavItem>
-   <span><a><Link to='/Registre'>
-   / Registre
-   </Link></a></span>
-   </NavItem>
-
-
-   </Nav>
-   
- </Collapse>
-</Navbar>
+     <NavbarPage/>
 
 </header>
 <br/><br/>
@@ -285,11 +188,12 @@ const mapStateToProps=(state)=>
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-      search: (keyword) =>
+      search: (services,keyword) =>
     {
         dispatch({
             type : 'SEARCH-SERVICE',
-            keyword,
+            services,
+            keyword
             
         })
     },

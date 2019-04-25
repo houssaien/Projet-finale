@@ -43,7 +43,9 @@ case 'UPDATE_SERVICE':
  case 'SEARCH-SERVICE':
  
  return(
-     state.filter(el => el.title.toLowerCase().indexOf(action.keyword)> -1)
+     
+    action.services.filter(el => el.title.toLowerCase().indexOf(action.keyword)> -1)
+     
  )
  
 
