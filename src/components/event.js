@@ -75,7 +75,7 @@ class Events extends Component {
        
     
     </div>
-                    <section className="uza-about-us-area">
+                    
                     <Container>
                     <Row>
 
@@ -102,12 +102,12 @@ class Events extends Component {
           
          
              
-        </section>
-</div>
+        
+
       
         
         
-         <br/> <br/><br/> 
+         
      
         <div className="container">
             <div className="border-line" />
@@ -184,6 +184,7 @@ class Events extends Component {
             </div>
           </div>
         </footer>
+        </div>
             </div>
          );
     }
