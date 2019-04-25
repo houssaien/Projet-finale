@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+
     import ItemDon from './item-don-front'
     import axios from 'axios'
       import {connect} from 'react-redux'
+      import NavbarPage from './navbarPage'
 class Don extends Component {
   constructor(props)
   {
@@ -68,10 +58,11 @@ class Don extends Component {
                     </div>
                 </div>
 
-                <div class="col-12">   {
+                <div class="col-8 immm">   {
                dons.map((el,index)=>
             <ItemDon key={index} item={el} num={index}/>
         )}  </div>
+           <div class="col-4"></div>
             </div>
         </div>
 
@@ -87,93 +78,7 @@ class Don extends Component {
         </section>
 
               <header class="header-area">
-     
-        
-               
-
-              <Navbar color="white" light expand="md">
-          <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="100px" /></NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" > 
-              <NavItem>
-                <NavLink class="classynav nav caret">
-                <Link to='/'className="active">
-                Acceuil
-            </Link>
-            </NavLink>
-              </NavItem>
-
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                <a>
-                  Echange
-                  </a>
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                  <Link to='/Bien'>
-                  Echange de bien
-            </Link>
-                 
-                  </DropdownItem>
-                  <DropdownItem>
-                  <Link to='/Service'>
-                    Echange de service
-                    </Link>
-                  </DropdownItem>
-                  
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
-                <NavLink>
-                <Link to='/Don'>
-                Don
-            </Link>
-                   </NavLink>
-              </NavItem>
-
-              <NavItem>
-                    <NavLink>
-                    <Link to='/Evenement'>
-                    Evements
-            </Link></NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink>
-                <Link to='/Apropos'>
-                A propos de nous
-            </Link></NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink>
-                <Link to='/Contact'>
-                Contact
-            </Link>
-                   </NavLink>
-              </NavItem>
-              
-        {/* Login / Register */}
-        
-        <NavItem>
-          <a><Link to='/Identifier'>
-          S'identifier
-            </Link> </a>
-            </NavItem>
-            <NavItem>
-            <span><a><Link to='/Registre'>
-            / Registre
-            </Link></a></span>
-            </NavItem>
-        
-       
-            </Nav>
-            
-          </Collapse>
-        </Navbar>
-        
+     <NavbarPage/>
         </header>
         
         

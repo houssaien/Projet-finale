@@ -4,7 +4,7 @@
 
 }
 .navbar{
-  height: 61px;
+  height: 80px;
 }
 .navbar a {
   display: flex;
@@ -47,9 +47,9 @@
   color: #1583e9;
   margin-bottom: 42px !important;
 }
-/* .dropdown-link{
+.dropdown-link{
   font-family: 'Lucida Sans';
   color: #686666 !important;
   text-align: center !important;
   padding-left: 3% !important;
-} */
+}
