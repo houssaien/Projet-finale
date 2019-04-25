@@ -36,14 +36,14 @@ class home extends Component {
               <Container>
               <Row>
           <Col xs="8"><div>
-          <Route exact path="/Identifier" component={Login} />
-            <Switch>
-              <PrivateRoute exact path="/back" component={Dashboard} />
-            </Switch>
-              <br/>
-                        <h1 className="title2"><img src="front/img/core-img/logof.png" width="200px" height="150px" />  <br/><br/>site tunisien d'échange de produit et service</h1>
+          <br/>
+              
+              <img src="front/img/core-img/logof.png" width="200px" height="150px" />
+          <br/>  <br/>  <br/>
+                        <h1 className="title3">Site tunisien d'échange de produit et service</h1>
                         <br/>
-                        <h5 className="title3">Simple, rapide et efficace</h5>
+                        <br/>
+                        <h3 className="title32">Simple, rapide et efficace</h3>
                         <br/><br/>
                         <Link to='/Apropos'> 
             <a  className="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Nos Services</a>
@@ -53,7 +53,7 @@ class home extends Component {
                       
                       </Col>
           <Col xs="4">
-           <img className="im2" src="front/img/bg-img/006.png"  />
+           <img className="img2" src="front/img/bg-img/006.png"  />
            
         
           </Col>
