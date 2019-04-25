@@ -31,7 +31,7 @@ const reducersbiens=(state=[],action)=>
       )
       case 'SEARCH_BIEN' : 
       return (
-        state.filter(el => el.title.toLowerCase()===(action.keyword))
+        action.biens.filter(el => el.title.toLowerCase().indexOf(action.keyword)>-1)
 )
       case 'EDIT_BIEN':
       return (

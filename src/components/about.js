@@ -72,9 +72,7 @@ class about extends Component {
                 <h1>badeli </h1>
                   <p>badeli est un site d'annonces gratuites de troc et d'échange. Des petites annonces pour le troc et l'échange entre particuliers et professionnels. Des annonces pour échanger des maisons, des voitures, de l'immobilier, des véhicules utilitaires, des jouets, des vêtements, des services. Des échanges et troc d'objets neufs ou d'occasion. Du troc facile et gratuit en déposant des annonces rapidement.  </p>
                   <p>Des milliers d'annonces sur toute la Tunisie pour échanger rapidement. Comme le principe des vide-greniers faites du troc et échanges des objets que vous ne voulez plus, échangez les contre de l'aide ou d'autres objets. Déposez gratuitement votre annonce d’échange ou de troc.</p>
-                  <Link to='/Apropos'>    <a className="btn uza-btn btn-2 mt-4">
-                  A propos de nous
-           </a> </Link> 
+                 
                 
                   {/* Video Area */}
                   
@@ -84,7 +82,7 @@ class about extends Component {
               {/* About Us Content */}
               <div className="col-12 col-md-5">
                 <div className="about-us-content mb-80">
-                <img className="im2" src="front/img/bg-img/007.png"  />
+                <img className="im4" src="front/img/bg-img/007.png"  />
                 </div>
               </div>
             </div>

@@ -3,6 +3,13 @@ import './App.css';
 import { Container, Row, Col } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import logo2 from './005.png';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import reducer from '../Reducers'
+import {createStore} from 'redux'
+import Login from "../components/login";
+import setAuthToken from "../utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "../actions/authActions";
 import {
     Collapse,
     Navbar,
@@ -15,6 +22,11 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+
+    import PrivateRoute from "../components/private-route/PrivateRoute";
+    import Dashboard from "../components/back/dashboard";
+   
+   
 class home extends Component {
     constructor(props) {
         super(props);
@@ -29,6 +41,8 @@ class home extends Component {
           isOpen: !this.state.isOpen
         });
       }
+
+      
     render() { 
         return ( 
             <div>
@@ -43,9 +57,14 @@ class home extends Component {
               <Container>
               <Row>
           <Col xs="8"><div>
+          <Route exact path="/Identifier" component={Login} />
+            <Switch>
+              <PrivateRoute exact path="/back" component={Dashboard} />
+            </Switch>
               <br/>
-                        <h1><img src="front/img/core-img/logof.png" width="200px" height="150px" /> <br/>site tunisien d'échange de produit et service</h1>
-                        <h5>Simple, rapide et efficace</h5>
+                        <h1 className="title2"><img src="front/img/core-img/logof.png" width="200px" height="150px" />  <br/><br/>site tunisien d'échange de produit et service</h1>
+                        <br/>
+                        <h5 className="title3">Simple, rapide et efficace</h5>
                         <br/><br/>
                         <Link to='/Apropos'> 
             <a  className="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Nos Services</a>
@@ -73,7 +92,7 @@ class home extends Component {
           <NavbarBrand href="/"><img src="front/img/core-img/logof.png" className="logo-navbar" width="200px" height="50px" /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" > 
+            <Nav className="ml-auto" color="white" > 
               <NavItem>
                 <NavLink class="classynav nav caret">
                 <Link className="active" to='/'>
@@ -88,7 +107,7 @@ class home extends Component {
                   Echange
                   </a>
                 </DropdownToggle>
-                <DropdownMenu right>
+                <DropdownMenu>
                   <DropdownItem>
                   <Link to='/Bien' className="dropdown-link">
                   Echange de bien

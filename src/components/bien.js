@@ -32,15 +32,16 @@ class Bien extends Component {
           isOpen: false,
           activePage: 1,
         
-          // keyword:''
+          keyword:''
         };
       }
     
       handle_search=(event) =>
       {
-          
-     
-         this.setState({keyword:event.target.value},()=>this.props.search(this.state.keyword))
+          console.log(this.props.biens)
+        
+         this.setState({keyword:event.target.value})
+         axios.get('/get-biens').then((res)=>this.props.search(res.data,this.state.keyword))
         
     }
       componentDidMount=()=>{
@@ -54,7 +55,8 @@ class Bien extends Component {
           isOpen: !this.state.isOpen
         });
       }
-    render() { 
+    render() {
+      console.log(this.props.biens)
       const {biens}=this.props
         return ( 
             <div>
@@ -276,12 +278,12 @@ const mapStateToProps=(state)=>
 const mapDispatchToProps=(dispatch)=>
 {
     return {
-      search: (keyword,biens) =>
+      search: (biens,keyword) =>
       {
           dispatch({
               type : 'SEARCH_BIEN',
-              keyword,
-              biens
+              biens,
+              keyword
           })
   },
         updateBienReducer:biens=>
@@ -289,6 +291,7 @@ const mapDispatchToProps=(dispatch)=>
             dispatch({
                 type:'UPDATE_BIEN',
                 biens
+              
             })
         }
         
