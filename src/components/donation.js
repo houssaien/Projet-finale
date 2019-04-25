@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
-
+import { MDBCol, MDBIcon } from "mdbreact";
     import ItemDon from './item-don-front'
     import axios from 'axios'
       import {connect} from 'react-redux'
@@ -12,9 +12,19 @@ class Don extends Component {
     
       super(props)
       this.state={
-        activePage: 1
+        activePage: 1,
+        keyword:''
       }
   }
+
+  handle_search=(event) =>
+  {
+      console.log(this.props.biens)
+    
+     this.setState({keyword:event.target.value})
+     axios.get('/get-dons').then((res)=>this.props.search(res.data,this.state.keyword))
+    
+}
   componentDidMount=()=>{
       axios.get('/get-dons').then((res)=>this.props.updateDonReducer(res.data))
   }
@@ -45,7 +55,10 @@ class Don extends Component {
             <div class="row h-100 align-items-end">
                 <div class="col-12">
                     <div class="breadcumb--con">
-                        <h2 class="title">Don</h2>
+                    <h2 class="title">Don</h2>
+                    
+                    <br/>
+                        <h2 class="title"></h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a><Link to='/'>
@@ -54,11 +67,23 @@ class Don extends Component {
               Don
             </Link></li>
                             </ol>
+                            <form className="form-inline mt-4 mb-4">
+         <MDBIcon icon="search" />
+         <input className="form-control form-control-sm ml-3 w-75" 
+                type="text"
+                placeholder="Chercher Don" 
+                aria-label="Search" 
+                value={this.state.keyword}
+                onChange={this.handle_search}/>
+</form>
                         </nav>
                     </div>
                 </div>
-
-                <div class="col-8 immm">   {
+                
+                <div class="col-8 immm">
+               
+                
+                   {
                dons.map((el,index)=>
             <ItemDon key={index} item={el} num={index}/>
         )}  </div>
@@ -190,6 +215,14 @@ const mapStateToProps=(state)=>
 const mapDispatchToProps=(dispatch)=>
 {
     return {
+      search: (dons,keyword) =>
+      {
+          dispatch({
+              type : 'SEARCH_Don',
+              dons,
+              keyword
+          })
+  },
         updateDonReducer:dons=>
         {
             dispatch({

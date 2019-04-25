@@ -3,8 +3,11 @@ import './App.css';
 import { Container, Row, Col } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import logo2 from './005.png';
-
- import MultiCarouselPage from './carousel' 
+import logome from './123.png';
+import logoinsaf from './insaf123.jpg';
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
+  MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+  
   import NavbarPage from './navbarPage'
 class home extends Component {
     constructor(props) {
@@ -52,7 +55,7 @@ class home extends Component {
                       
                       
                       </Col>
-          <Col xs="4">
+          <Col xs="4" >
            <img className="img2" src="front/img/bg-img/006.png"  />
            
         
@@ -81,108 +84,14 @@ class home extends Component {
 
        
              
-        {/* ***** Welcome Area Start ***** */}
-        <section className="welcome-area">
-          <div className="welcome-slides owl-carousel">
-            {/* Single Welcome Slide */}
-            <div className="single-welcome-slide">
-              {/* Background Curve */}
-              <div className="background-curve">
-                <img src="front/img/core-img/curve-1.png" alt />
-              </div>
-              {/* Welcome Content */}
-              <div className="welcome-content h-100">
-                <div className="container h-100">
-                  <div className="row h-100 align-items-center">
-                    {/* Welcome Text */}
-                    <div className="col-12 col-md-6">
-                      <div className="welcome-text">
-                        <h2 data-animation="fadeInUp" data-delay="100ms">Uza makes your <br /> biz <span>greater</span></h2>
-                        <h5 data-animation="fadeInUp" data-delay="400ms">We love to create "cool" things on Digital Platforms</h5>
-                        <a href="#" className="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
-                      </div>
-                    </div>
-                    {/* Welcome Thumbnail */}
-                    <div className="col-12 col-md-6">
-                      <div className="welcome-thumbnail">
-                        <img src="front/img/bg-img/bg.jpg" alt data-animation="slideInRight" data-delay="400ms" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Single Welcome Slide */}
-            <div className="single-welcome-slide">
-              {/* Background Curve */}
-              <div className="background-curve">
-                <img src="front/img/core-img/curve-1.png" alt />
-              </div>
-              {/* Welcome Content */}
-              <div className="welcome-content h-100">
-                <div className="container h-100">
-                  <div className="row h-100 align-items-center">
-                    {/* Welcome Text */}
-                    <div className="col-12 col-md-6">
-                      <div className="welcome-text">
-                        <h2 data-animation="fadeInUp" data-delay="100ms">Uza makes your <br /> biz <span>greater</span></h2>
-                        <h5 data-animation="fadeInUp" data-delay="400ms">We love to create "cool" things on Digital Platforms</h5>
-                        <a href="#" className="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
-                      </div>
-                    </div>
-                    {/* Welcome Thumbnail */}
-                    <div className="col-12 col-md-6">
-                      <div className="welcome-thumbnail">
-                        <img src="front/img/bg-img/bg.jpg" alt data-animation="slideInRight" data-delay="400ms" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Single Welcome Slide */}
-            <div className="single-welcome-slide">
-              {/* Background Curve */}
-              <div className="background-curve">
-                <img src="front/img/core-img/curve-1.png" alt />
-              </div>
-             
-            </div>
-          </div>
-        </section>
+      
+         
         {/* ***** Welcome Area End ***** */}
         {/* ***** About Us Area Start ***** */}
-        <section className="uza-about-us-area">
-          <div className="container">
-            <div className="row align-items-center">
-              {/* About Thumbnail */}
-              <div className="col-12 col-md-6">
-                <div className="about-us-thumbnail mb-80">
-                <img  src={logo2} alt="Logo" />
-                  {/* Video Area */}
-                  
-                </div>
-              </div>
-              {/* About Us Content */}
-              <div className="col-12 col-md-6">
-                <div className="about-us-content mb-80">
-                  <h2>C'est quoi badeli ?</h2>
-                  <p>badeli est un site d'annonces gratuites de troc et d'échange. Des petites annonces pour le troc et l'échange entre particuliers et professionnels. Des annonces pour échanger des maisons, des voitures, de l'immobilier, des véhicules utilitaires, des jouets, des vêtements, des services. Des échanges et troc d'objets neufs ou d'occasion. Du troc facile et gratuit en déposant des annonces rapidement.  </p>
-                  <p>Des milliers d'annonces sur toute la Tunisie pour échanger rapidement. Comme le principe des vide-greniers faites du troc et échanges des objets que vous ne voulez plus, échangez les contre de l'aide ou d'autres objets. Déposez gratuitement votre annonce d’échange ou de troc.</p>
-                  <Link to='/Apropos'>    <a className="btn uza-btn btn-2 mt-4">
-                  A propos de nous
-           </a> </Link> 
-                </div>
-              </div>
-            </div>
-          </div>
-         
-        
-        </section>
        
         {/* ***** About Us Area End ***** */}
         {/* ***** Services Area Start ***** */}
-        <section className="uza-services-area section-padding-80-0">
+        <section className="uza-services-area">
           <div className="container">
             <div className="row">
               {/* Section Heading */}
@@ -240,7 +149,7 @@ class home extends Component {
           </div>
         </section>
         {/* ***** Services Area End ***** */}
-       
+      
         {/* ***** Blog Area Start ***** */}
         <section className="uza-blog-area">
           {/* Background Curve */}
@@ -301,7 +210,46 @@ class home extends Component {
           </div>
         </section>
         {/* ***** Blog Area End ***** */}
-     
+        <center>
+          <br/> <br/>
+        <MDBContainer className="aboutme">
+      <MDBCarousel activeItem={1} length={2} slide={true} showControls={false} showIndicators={true} multiItem>
+        <MDBCarouselInner>
+          <MDBRow>
+            <MDBCarouselItem itemId="1">
+            <img src={logome}  class="img-fluid z-depth-1 rounded-circle" width="200px" height="200px"
+      alt="Responsive image" />
+      <br/>
+      <p class="lead">
+           Plus d’une dizaine de sites propose de faire de l’échange de biens. <br/>
+           Avant l’échange était uniquement possible sous forme d’abonnement annuel payant, aujourd’hui les règles ont changé. De nouveaux sites tels que Badeli proposent de faire des échanges de biens totalement gratuit.
+           
+</p>
+<p>Ben salem Houssaien | Développeur de site web</p>
+<br/>
+<br/>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="2">
+            <img src={logoinsaf}  class="img-fluid z-depth-1 rounded-circle" width="200px" height="200px"
+      alt="Responsive image" />
+      <br/>
+      <p class="lead">
+      Échanger de services  est une pratique courante aujourd’hui. <br/>
+       Elle consiste à offrir un service à un particulier en contrepartie d’un autre service. Ainsi, vous n’avez pas forcément besoin de rémunérer financièrement la prestation dont vous bénéficiez.
+</p>
+
+<p>Nouira Insaf | Développeuse de site web</p>
+<br/>
+<br/>
+            </MDBCarouselItem>
+           
+           
+          </MDBRow>
+        </MDBCarouselInner>
+      </MDBCarousel>
+    </MDBContainer>
+    <br/> <br/>
+    </center>
         <div className="container">
             <div className="border-line" />
           </div>

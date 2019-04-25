@@ -107,7 +107,7 @@ class Bien extends Component {
               <Row>
           <Col xs="12" sm="4">
           <ListGroup>
-          <ListGroupItem active tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
+          <ListGroupItem className="categ" tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
           <ListGroupItem tag="a"action><Link to='/Bien_Immobilier'>Immobilier</Link></ListGroupItem>   
           <ListGroupItem tag="a"action><Link to='/Bien_Véhicules'>Véhicules</Link></ListGroupItem>   
           <ListGroupItem tag="a"action><Link to='/Bien_Maison'>Pour la Maison et Jardin</Link></ListGroupItem>
