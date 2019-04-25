@@ -69,20 +69,22 @@ class Login extends Component {
                    
                   <div className="col-lg-12">
                       <div className="form-group">
-                        <input type="email" className="form-control mb-30" name="email" placeholder="Email" />
+                        <input type="email" className="form-control mb-30"  placeholder="Email" required />
                       </div>
                     </div>
 
                     <div className="col-lg-12">
                       <div className="form-group">
-                        <input type="password" className="form-control mb-30" name="email" placeholder="Mote de passe" />
+                        <input type="password" className="form-control mb-30"  placeholder="Mote de passe" required />
                       </div>
                     </div>
                    
                     
                   
                     <div className="col-12">
-                  <center>  <button className="btn uza-btn btn-3 mt-15">Connecter</button></center>  
+                  <center>  <button className="btn uza-btn btn-3 mt-15"><Link to='/back'>
+                               Connecter
+            </Link></button></center>  
                     </div>
                   </div>
                 </form>

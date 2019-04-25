@@ -1,7 +1,7 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import { MDBNavbar, MDBNavbarNav, MDBNavItem,  MDBFormInline,} from "mdbreact";
-
+import {Link} from 'react-router-dom'
 import { Badge, Button } from 'reactstrap';
 
  
@@ -29,15 +29,16 @@ export default props => {
 </MDBNavbarNav>
           <MDBNavbarNav right>
          
-           
+          <Link to='./'> 
               <Button color="primary" size="sm" outline>
           Notifications <Badge color="primary">4</Badge>
         </Button>
-
-        <Button color="primary" size="sm" outline>
-          Notifications <Badge color="primary">4</Badge>
+        </Link>
+        <Link to='./'> 
+        <Button color="danger" size="sm" outline>
+       Log out 
         </Button>
-
+        </Link>
        
               
           </MDBNavbarNav>
