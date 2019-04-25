@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap'
 import {Link} from 'react-router-dom'
 import logo2 from './005.png';
 
-  
+ import MultiCarouselPage from './carousel' 
   import NavbarPage from './navbarPage'
 class home extends Component {
     constructor(props) {
@@ -179,6 +179,7 @@ class home extends Component {
          
         
         </section>
+       
         {/* ***** About Us Area End ***** */}
         {/* ***** Services Area Start ***** */}
         <section className="uza-services-area section-padding-80-0">

@@ -7,13 +7,15 @@ import axios from 'axios'
 import './event.css'
 import NavbarPage from './navbarPage'
 import ItemEventFront from './itemEvents-front'
+import { MDBCol, MDBIcon } from "mdbreact";
 class Events extends Component {
     constructor(props) {
         super(props);
     
         this.toggle = this.toggle.bind(this);
         this.state = {
-          isOpen: false
+          isOpen: false,
+          keyword:''
         };
       }
       toggle() {
@@ -23,6 +25,15 @@ class Events extends Component {
       }
       componentDidMount=()=>{
         axios.get('/get-event').then((res)=>this.props.updateEventReducer(res.data))
+    }
+    handle_search  = (event) =>
+    {
+        
+   
+       this.setState({keyword:event.target.value})
+       axios.get('/get-event').then((res)=> this.props.search(res.data,this.state.keyword))
+      
+
     }
     render() { 
       const {events}=this.props
@@ -65,8 +76,23 @@ class Events extends Component {
     
     </div>
                     <section className="uza-about-us-area">
-          
-         
+                    <Container>
+                    <Row>
+
+                    
+                    <Col xs="8" >
+                    <MDBCol >
+       <form className="form-inline mt-4 mb-4">
+         <MDBIcon icon="search" />
+         <input className="form-control form-control-sm ml-3 w-75" 
+                type="text"
+                placeholder="Search" 
+                aria-label="Search" 
+                value={this.state.keyword}
+                onChange={this.handle_search}/>
+    </form>
+    </MDBCol>
+    </Col></Row></Container>
           <div className=" container Liste-event" >
          
           {
@@ -81,24 +107,7 @@ class Events extends Component {
       
         
         
-              {/* Welcome Content */}
-            
-           
-              
-     
-       
-       
-        {/* ***** Header Area End ***** */}
-
-        
-             
-        {/* ***** Welcome Area Start ***** */}
-       
-       
-       
-       
-       
-        {/* ***** Blog Area End ***** */}
+         <br/> <br/><br/> 
      
         <div className="container">
             <div className="border-line" />
@@ -187,7 +196,17 @@ const mapStateToProps=(state)=>
 
 const mapDispatchToProps=(dispatch)=>
 {
-    return {
+  return {
+    search: (events,keyword) =>
+  {
+      dispatch({
+          type : 'SEARCH-EVENTS',
+          events,
+          keyword
+          
+      })
+  },
+   
       updateEventReducer:events=>
         {
             dispatch({

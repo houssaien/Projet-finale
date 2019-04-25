@@ -1,0 +1,7 @@
+.carousel{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    
+    height: 100px !important;
+
+}

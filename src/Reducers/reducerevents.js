@@ -38,6 +38,13 @@ case 'UPDATE_EVENT':
  return (
      state.map(el=>el._id===action.editevent._id? el=action.editevent:el)  
  )
+ case 'SEARCH-EVENTS':
+ 
+ return(
+     
+    action.events.filter(el => el.title.toLowerCase().indexOf(action.keyword)> -1)
+     
+ )
 
 default :
 return state

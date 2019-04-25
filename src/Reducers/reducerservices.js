@@ -17,7 +17,7 @@ let services=[
 //     imageUrl: "images/uploads/1555072448028-dcn4e38-44bbf8a1-1592-4014-b4de-c04f663c1c74.png"}
 ]
 
-const reducerservices=(state=services,action)=>{
+const reducerservices=(state=[],action)=>{
     switch(action.type)
 {
 case 'ADD_SERVICE' :

@@ -34,7 +34,8 @@ class Service extends Component {
       {
           
      
-         this.setState({keyword:event.target.value}, ()=> this.props.search(this.props.services,this.state.keyword))
+         this.setState({keyword:event.target.value})
+         axios.get('/get-service').then((res)=> this.props.search(res.data,this.state.keyword))
         
 
       }
@@ -111,7 +112,7 @@ class Service extends Component {
       
       </div>
           <ListGroup>
-          <ListGroupItem active tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
+          <ListGroupItem className="categ" tag="a"action><h2>Nos Catégories</h2></ListGroupItem>
       <ListGroupItem tag="a"action> <Link to='/Service_Bricolage'>Bricolage</Link></ListGroupItem>
       <ListGroupItem tag="a"action><Link to='/Service_Beaute'>Beauté Bien-être</Link></ListGroupItem>
       <ListGroupItem tag="a"action><Link to='/Service_Travail'>Travail</Link></ListGroupItem>
